@@ -310,7 +310,7 @@ html[lang="ar"] .pbody .kind{letter-spacing:0}
 /* flow map */
 .flow{margin-top:.5rem}
 .flow-row{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;align-items:center}
-.lane-label{justify-self:start;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .7rem;border-radius:99px}
+.lane-label{justify-self:center;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .7rem;border-radius:99px}
 html[lang="ar"] .lane-label{letter-spacing:0}
 .lane-label.b{background:var(--grad-dark);border:1px solid rgba(255,255,255,.18);color:#cfcfcf}
 .lane-label.a{background:var(--grad-light);color:#000}
@@ -327,10 +327,12 @@ html[lang="ar"] .lane-label{letter-spacing:0}
 .node.a:hover{background-position:100% 100%}
 .node.res{border:1px solid transparent;color:#fff;font-weight:700;
   background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(120deg,#fff,#5c5c5c) border-box}
-.flow-bridge{width:2px;height:2.6rem;margin-inline-start:2.4rem;background:repeating-linear-gradient(180deg,#777 0 5px,transparent 5px 10px);position:relative}
+.flow-bridge{width:2px;height:2.6rem;margin-inline-start:calc(3.25rem - 1px);background:repeating-linear-gradient(180deg,#777 0 5px,transparent 5px 10px);position:relative}
 .flow-bridge::after{content:"";position:absolute;bottom:-4px;left:-4px;border:5px solid transparent;border-top-color:#bbb;border-bottom:0}
 @media (max-width:900px){
   .flow-row{grid-template-columns:1fr;gap:.7rem}
+  .lane-label{justify-self:start}
+  .flow-bridge{margin-inline-start:2.2rem}
   .lane{flex-direction:column;gap:1.3rem}
   .node + .node::before{inset-inline-start:1.4rem;top:-1.3rem;width:2px;height:1.3rem}
   .node + .node::after{inset-inline-start:calc(1.4rem - 4px);top:-6px;border:5px solid transparent;border-top-color:#9a9a9a;border-bottom:0}
@@ -400,3 +402,7 @@ html .flow.in.done .node.res:hover{box-shadow:0 14px 34px rgba(255,255,255,.12)}
 .js .flow .flow-bridge{opacity:0;transition:opacity .5s ease .45s}
 .js .flow.in .flow-bridge{opacity:1}
 @media (prefers-reduced-motion:reduce){.js .flow .node,.js .flow .node::before,.js .flow .node::after,.js .flow .flow-bridge{opacity:1!important;transform:none!important}}
+
+/* numbers like "10 → 1-2" or "800+" always read left to right, even on the Arabic page */
+.stat b,.minis b{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .stat b,html[dir="rtl"] .minis b{text-align:right}
