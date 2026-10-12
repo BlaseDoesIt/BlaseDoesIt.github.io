@@ -35,13 +35,13 @@ img{max-width:100%;display:block}
   background:var(--grad-light);background-size:140% 140%;background-position:0% 0%;color:#000;
   position:relative;overflow:hidden;
   transition:background-position .7s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
-.g::after,.btn.solid::after,.ba dd.after::after,.ba-mini .a::after{
+.btn.solid::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.75) 50%,transparent 65%);
   transform:translateX(-120%);transition:transform .8s var(--ease)}
 .g:hover,.btn.solid:hover,.card .tag:hover,.ba dd.after:hover,.ba-mini .a:hover{
   background-position:100% 100%;transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,255,255,.12)}
-.g:hover::after,.btn.solid:hover::after,.ba dd.after:hover::after,.ba-mini .a:hover::after{transform:translateX(120%)}
+.btn.solid:hover::after{transform:translateX(120%)}
 
 /* dark gradient, for "before" */
 .ba dd.before,.ba-mini .b{
@@ -256,7 +256,12 @@ html[lang="ar"] .ba-mini i{letter-spacing:0}
 .shorts iframe{width:min(280px,100%);aspect-ratio:9/16;border:0;border-radius:4px;background:var(--surface)}
 
 footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.other-link{color:var(--muted);font-size:.85rem;text-decoration:none;border-bottom:1px solid var(--line)}
+.other-link:hover{color:var(--ink)}
+.aside{color:var(--muted);font-size:.9rem;margin-top:3rem}
+.aside a{color:var(--muted)}
+.aside a:hover{color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
