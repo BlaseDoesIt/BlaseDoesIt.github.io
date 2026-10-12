@@ -11,7 +11,7 @@ V = "10"  # bump to bust browser caches of style.css / i18n.js
 PROJECTS = [
   {
     "slug": "rentory",
-    "repo": "https://github.com/Master7Pineapple/odoo-rentory",
+    "closed": True,  # code stays private; tagged closed-source, no repo link
     "kind": ("Custom Odoo app · rental and assets", "تطبيق Odoo مخصص · التأجير والأصول"),
     "title": ("Rentory", "Rentory"),
     "summary": ("A rental and asset management app built inside Odoo 19 for a camera and media equipment rental house.",
@@ -214,6 +214,8 @@ UI = {
   "shots_h": ("Screenshots", "لقطات الشاشة"),
   "src_btn": ("View the source code ↗", "عرض الكود المصدري ↗"),
   "src_link": ("Source code ↗", "الكود المصدري ↗"),
+  "open_src": ("Open-source", "مفتوح المصدر"),
+  "closed_src": ("Closed-source", "مغلق المصدر"),
   "next": ("Next project", "المشروع التالي"),
   "need_h": ("Need something like this?", "تحتاج شيئاً مشابهاً؟"),
   "need_p": ("Tell me what your team does by hand today. A 15 minute call is enough to see if I can automate it.",
@@ -249,6 +251,8 @@ def build(proj, nxt):
     feats = "".join(f'<li>{p.t(f)}</li>' for f in proj["features"])
     tech = "".join(f'<span class="chip">{e(x)}</span>' for x in proj["tech"])
     src = f'<a class="btn src" href="{proj["repo"]}" target="_blank" rel="noopener" data-i18n="u_src_btn">{e(UI["src_btn"][0])}</a>' if proj.get("repo") else ""
+    lk = lic_key(proj)
+    lic = f'<span class="lic" data-i18n="u_{lk}">{e(UI[lk][0])}</span>' if lk else ""
     shots = ""
     if proj["shots"]:
         items = "".join(
@@ -318,6 +322,7 @@ def build(proj, nxt):
       </div>
       <div>
         {T("tech_h", tag="h3")}
+        {lic}
         <div class="chips">{tech}</div>
         {src}
       </div>
@@ -353,6 +358,16 @@ window.AR = {json.dumps(p.ar, ensure_ascii=False, indent=0)};
 </html>
 '''
 
+def lic_key(pr):
+    """open_src / closed_src label key, or None when there is no code to speak of."""
+    return "closed_src" if pr.get("closed") else "open_src" if pr.get("repo") else None
+
+def lic_tag(pr, ar):
+    lk = lic_key(pr)
+    if not lk: return ""
+    ar["lic_" + lk] = e(UI[lk][1])
+    return f'<span class="lic" data-i18n="lic_{lk}">{e(UI[lk][0])}</span>'
+
 def cards():
     """Home page markup: project cards, plus the compact "smaller work" items."""
     out, small, ar = [], [], {"sw_h": "أعمال أصغر"}
@@ -365,7 +380,7 @@ def cards():
                 ar["sw_src"] = e(UI["src_link"][1])
                 src = NL + f'            <a class="src" href="{pr["repo"]}" target="_blank" rel="noopener" data-i18n="sw_src">{e(UI["src_link"][0])}</a>'
             small.append(f'''          <div class="sw">
-            <h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>
+            <h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>{lic_tag(pr, ar)}
             <p data-i18n="{k}d">{e(pr["card"][0])}</p>
             <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>{src}
           </div>''')
@@ -376,6 +391,7 @@ def cards():
           <div class="thumb"><img src="img/{pr["thumb"]}" alt="" loading="lazy"></div>
           <div class="pbody">
             <span class="kind" data-i18n="{k}k">{e(pr["kind"][0])}</span>
+            {lic_tag(pr, ar)}
             <h3 data-i18n="{k}t">{e(pr["title"][0])}</h3>
             <p data-i18n="{k}d">{e(pr["card"][0])}</p>
             <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>
