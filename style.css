@@ -378,6 +378,9 @@ html[lang="ar"] .sw-h{letter-spacing:0}
 .sw h4{margin:0;font-size:1rem}
 .sw p{margin:0;color:var(--muted);font-size:.9rem;flex:1 1 100%;text-align:start}
 .sw .pres{margin-top:.3rem}
+.sw a.src{margin-top:.3rem;margin-inline-start:auto;font-size:.85rem;font-weight:700;color:var(--muted);text-decoration:none;transition:color .2s}
+.sw a.src:hover{color:var(--ink)}
+.btn.src{margin-top:1.5rem}
 @media (max-width:640px){.sw-list{grid-template-columns:1fr}}
 
 /* flow map animation */

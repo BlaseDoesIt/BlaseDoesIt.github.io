@@ -6,11 +6,12 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "8"  # bump to bust browser caches of style.css / i18n.js
+V = "9"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
     "slug": "rentory",
+    "repo": "https://github.com/Master7Pineapple/odoo-rentory",
     "kind": ("Custom Odoo app · rental and assets", "تطبيق Odoo مخصص · التأجير والأصول"),
     "title": ("Rentory", "Rentory"),
     "summary": ("A rental and asset management app built inside Odoo 19 for a camera and media equipment rental house.",
@@ -54,6 +55,7 @@ PROJECTS = [
   },
   {
     "slug": "invoices",
+    "repo": "https://github.com/Master7Pineapple/odoo-arabic-invoices-vouchers",
     "kind": ("Accounting documents · Arabic", "مستندات محاسبية · بالعربية"),
     "title": ("Invoices and vouchers", "الفواتير والسندات"),
     "summary": ("Arabic invoices and receipt or payment vouchers that print straight from Odoo, in the company's own design.",
@@ -86,6 +88,7 @@ PROJECTS = [
   },
   {
     "slug": "shift-guard",
+    "repo": "https://github.com/Master7Pineapple/odoo-attendance-shift-guard",
     "kind": ("Odoo Attendances add-on · HR", "إضافة لتطبيق الحضور في Odoo · موارد بشرية"),
     "title": ("Attendance Shift Guard", "حارس الدوام"),
     "summary": ("GPS-verified attendance with personal shifts, reminders and overtime approval, built on top of Odoo Attendances.",
@@ -117,6 +120,7 @@ PROJECTS = [
   },
   {
     "slug": "discounts",
+    "repo": "https://github.com/Master7Pineapple/odoo-rental-customer-discount",
     "small": True,  # shown in "Smaller work" on the home page, no own page
     "kind": ("Odoo Rental add-on · sales", "إضافة لتطبيق التأجير في Odoo · مبيعات"),
     "title": ("Customer discounts", "خصومات العملاء"),
@@ -143,6 +147,7 @@ PROJECTS = [
   },
   {
     "slug": "analytics",
+    "repo": "https://github.com/Master7Pineapple/odoo-rental-revenue-analytics",
     "kind": ("Odoo reporting · rental data", "تقارير Odoo · بيانات التأجير"),
     "title": ("Revenue analytics", "تحليلات الإيرادات"),
     "summary": ("Revenue and most-rented reports by month, year, category, customer and serial, inside Odoo.",
@@ -207,6 +212,8 @@ UI = {
   "feat_h": ("What it does", "ما الذي يفعله"),
   "tech_h": ("Built with", "بُني باستخدام"),
   "shots_h": ("Screenshots", "لقطات الشاشة"),
+  "src_btn": ("View the source code ↗", "عرض الكود المصدري ↗"),
+  "src_link": ("Source code ↗", "الكود المصدري ↗"),
   "next": ("Next project", "المشروع التالي"),
   "need_h": ("Need something like this?", "تحتاج شيئاً مشابهاً؟"),
   "need_p": ("Tell me what your team does by hand today. A 15 minute call is enough to see if I can automate it.",
@@ -241,6 +248,7 @@ def build(proj, nxt):
     stats = "".join(f'<div class="stat"><b>{e(v)}</b>{p.t(l)}</div>' for v, l in proj["stats"])
     feats = "".join(f'<li>{p.t(f)}</li>' for f in proj["features"])
     tech = "".join(f'<span class="chip">{e(x)}</span>' for x in proj["tech"])
+    src = f'<a class="btn src" href="{proj["repo"]}" target="_blank" rel="noopener" data-i18n="u_src_btn">{e(UI["src_btn"][0])}</a>' if proj.get("repo") else ""
     shots = ""
     if proj["shots"]:
         items = "".join(
@@ -311,6 +319,7 @@ def build(proj, nxt):
       <div>
         {T("tech_h", tag="h3")}
         <div class="chips">{tech}</div>
+        {src}
       </div>
     </div>
   </section>
@@ -351,10 +360,14 @@ def cards():
         if pr.get("small"):
             k = f"sw{i}"
             ar[k+"t"], ar[k+"d"], ar[k+"r"] = e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1])
+            src = ""
+            if pr.get("repo"):
+                ar["sw_src"] = e(UI["src_link"][1])
+                src = NL + f'            <a class="src" href="{pr["repo"]}" target="_blank" rel="noopener" data-i18n="sw_src">{e(UI["src_link"][0])}</a>'
             small.append(f'''          <div class="sw">
             <h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>
             <p data-i18n="{k}d">{e(pr["card"][0])}</p>
-            <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>
+            <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>{src}
           </div>''')
             continue
         k = f"pc{i}"
