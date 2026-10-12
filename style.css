@@ -1,5 +1,8 @@
 @font-face{font-family:"Helvetica Neue Web";src:url("fonts/helveticaneue-roman.woff") format("woff");font-weight:400 500;font-display:swap}
 @font-face{font-family:"Helvetica Neue Web";src:url("fonts/helveticaneue-bold.woff") format("woff");font-weight:600 800;font-display:swap}
+/* Arabic pages: same font minus brackets/quotes, so those come from the Arabic font and mirror correctly */
+@font-face{font-family:"Helvetica Neue AR";src:url("fonts/helveticaneue-roman.woff") format("woff");font-weight:400 500;font-display:swap;unicode-range:U+0020-0027,U+002A-003B,U+003D,U+003F-005A,U+005C,U+005E-007A,U+007C,U+007E-00AA,U+00AC-00BA,U+00BC-00FF,U+2000-2038,U+203B-206F,U+2190-2193,U+20AC,U+2122,U+2212}
+@font-face{font-family:"Helvetica Neue AR";src:url("fonts/helveticaneue-bold.woff") format("woff");font-weight:600 800;font-display:swap;unicode-range:U+0020-0027,U+002A-003B,U+003D,U+003F-005A,U+005C,U+005E-007A,U+007C,U+007E-00AA,U+00AC-00BA,U+00BC-00FF,U+2000-2038,U+203B-206F,U+2190-2193,U+20AC,U+2122,U+2212}
 
 :root{
   --bg:#000000; --surface:rgba(255,255,255,.04);
@@ -16,7 +19,7 @@
 }
 html[lang="ar"]{
   --head:"Noto Kufi Arabic",Tahoma,sans-serif;
-  --body:"Helvetica Neue Web","IBM Plex Sans Arabic",Tahoma,system-ui,sans-serif;
+  --body:"Helvetica Neue AR","IBM Plex Sans Arabic",Tahoma,system-ui,sans-serif;
   --h1:clamp(2.2rem,5.6vw,4rem); --h1-lh:1.3;
 }
 *{box-sizing:border-box}
