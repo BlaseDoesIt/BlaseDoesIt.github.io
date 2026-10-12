@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kosai Alhafez | Video, music and side projects</title>
+<meta name="description" content="Short-form video edits for B2B and SaaS brands, music, and tools I build in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" data-i18n="brand">Kosai Alhafez</a>
+    <nav class="nav">
+      <a href="#video" data-i18n="nav_video">Video</a>
+      <a href="#music" data-i18n="nav_music">Music</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="../" data-i18n="nav_back">Odoo and apps</a>
+    </nav>
+    <button class="lang" id="langBtn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" style="padding-bottom:1rem">
+    <p class="eyebrow" data-i18n="eyebrow">Outside the day job</p>
+    <h1 data-i18n="h1">Video, music and things I build.</h1>
+  </div>
+
+  <section id="video">
+    <div class="wrap">
+      <h2 data-i18n="vid_h">Short-form video</h2>
+      <p class="sub" data-i18n="vid_p">Short-form edits in the style of B2B and SaaS content: hooks, cutaways, captions, motion graphics, color and sound. I edit in ShortCut, the editor I built myself.</p>
+      <div class="shorts">
+        <iframe src="https://www.youtube.com/embed/3pn61ZRiljU" title="Sample edit 1" loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/TB3A1xKWvuw" title="Sample edit 2" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="wrap">
+      <h2 data-i18n="mus_h">Music</h2>
+      <p data-i18n="mus_p">Cinematic, orchestral and metal compositions, piano arrangements and game themes, produced in FL Studio.</p>
+      <p><a class="btn" href="https://www.youtube.com/@blasemasters" data-i18n="mus_link">Listen on YouTube</a></p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 data-i18n="proj_h">Side projects</h2>
+      <div class="projects">
+        <div class="proj">
+          <h3>ShortCut</h3>
+          <p data-i18n="p1_p">A desktop video editor I built in C++ for short-form content, with help from AI. It's my main editing tool.</p>
+          <a href="https://github.com/Master7Pineapple/ShortCut" data-i18n="view_code">View the code</a>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p2_h">Bezier drawing app</h3>
+          <p data-i18n="p2_p">A C++ illustration app built around a Bezier curve system you draw by hand.</p>
+          <a href="https://github.com/Master7Pineapple/Projects" data-i18n="view_code">View the code</a>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p3_h">Untitled action game</h3>
+          <p data-i18n="p3_p">A 2.5D action game in C++ and raylib, with an original soundtrack. In development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 data-i18n="con_h">Contact</h2>
+      <a class="mail" href="mailto:kosai@blasedoesit.com">kosai@blasedoesit.com</a>
+      <div class="links">
+        <a href="https://github.com/Master7Pineapple">GitHub</a>
+        <a href="https://www.youtube.com/@blasemasters">YouTube</a>
+        <a href="../" data-i18n="nav_back">Odoo and apps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span data-i18n="foot">© 2026 MHD Kosai Alhafez</span><span>Damascus · UTC+3</span></div>
+</footer>
+
+<script>
+window.TITLES = {en:"Kosai Alhafez | Video, music and side projects", ar:"قصي الحافظ | الفيديو والموسيقى والمشاريع"};
+window.AR = {
+  brand:"قصي الحافظ",
+  nav_video:"الفيديو", nav_music:"الموسيقى", nav_projects:"المشاريع", nav_back:"Odoo والتطبيقات",
+  eyebrow:"خارج العمل اليومي",
+  h1:"فيديو وموسيقى وأشياء أبنيها.",
+  vid_h:"مقاطع قصيرة",
+  vid_p:"مونتاج مقاطع قصيرة بأسلوب محتوى شركات B2B وSaaS: الافتتاحية الجاذبة، اللقطات الاعتراضية، النصوص على الشاشة، الموشن غرافيك، الألوان والصوت. أعمل على ShortCut، برنامج المونتاج الذي بنيته بنفسي.",
+  mus_h:"الموسيقى",
+  mus_p:"مؤلفات سينمائية وأوركسترالية وميتال، وتوزيعات بيانو وموسيقى ألعاب، من إنتاجي على FL Studio.",
+  mus_link:"استمع على يوتيوب",
+  proj_h:"مشاريع جانبية",
+  p1_p:"برنامج مونتاج لسطح المكتب بنيته بلغة C++ للمحتوى القصير، بمساعدة الذكاء الاصطناعي. هو أداة المونتاج الأساسية عندي.",
+  view_code:"عرض الكود",
+  p2_h:"تطبيق رسم بمنحنيات بيزييه",
+  p2_p:"تطبيق رسم بلغة C++ مبني على نظام منحنيات بيزييه تُرسم باليد.",
+  p3_h:"لعبة أكشن بلا عنوان بعد",
+  p3_p:"لعبة أكشن 2.5D بلغة C++ ومكتبة raylib، مع موسيقى تصويرية أصلية. قيد التطوير.",
+  con_h:"تواصل",
+  foot:"© 2026 محمد قصي الحافظ"
+};
+</script>
+<script src="../i18n.js"></script>
+</body>
+</html>
