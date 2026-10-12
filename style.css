@@ -277,7 +277,7 @@ p,dd,.ticks li,.result,.ba-mini > span,.faq details p{text-align:justify;text-ju
 
 /* ---------- project cards (home) ---------- */
 .pgrid-h{margin:0 0 1rem}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .pcard{display:flex;flex-direction:column;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;
   transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
 .pcard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.4);box-shadow:0 14px 34px rgba(0,0,0,.5)}
@@ -296,7 +296,6 @@ html[lang="ar"] .pbody .kind{letter-spacing:0}
   padding:.25rem .6rem;border-radius:99px;transition:background-position .6s var(--ease)}
 .pbody p + .pres{margin-top:.6rem}
 .pcard:hover .pres{background-position:100% 100%}
-@media (max-width:900px){.pgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.pgrid{grid-template-columns:1fr}}
 
 /* ---------- project pages ---------- */
@@ -318,7 +317,6 @@ html[lang="ar"] .lane-label{letter-spacing:0}
 .lane{display:flex;gap:1.7rem;list-style:none;margin:0;padding:0}
 .node{flex:1 1 0;min-width:0;position:relative;padding:.75rem .85rem .85rem;border-radius:6px;font-size:.92rem;line-height:1.4;
   transition:transform .3s var(--ease),box-shadow .3s}
-.node:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.45)}
 .node .num{display:block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem;opacity:.65}
 .node + .node::before{content:"";position:absolute;inset-inline-start:-1.7rem;top:50%;width:1.7rem;height:2px;background:#6a6a6a}
 .node + .node::after{content:"";position:absolute;inset-inline-start:-10px;top:calc(50% - 4px);border:5px solid transparent;border-inline-start-color:#9a9a9a}
@@ -366,3 +364,39 @@ html[dir="rtl"] .next-card b::after{content:" ←"}
 .need h3{margin:0}
 .need p{margin:.4rem 0 1rem}
 @media (max-width:760px){.next-grid{grid-template-columns:1fr}}
+
+/* smaller work */
+.smallwork{margin-top:1.6rem}
+.sw-h{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem}
+html[lang="ar"] .sw-h{letter-spacing:0}
+.sw-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sw{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1rem;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:6px;
+  transition:border-color .3s,background-color .3s}
+.sw:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.03)}
+.sw h4{margin:0;font-size:1rem}
+.sw p{margin:0;color:var(--muted);font-size:.9rem;flex:1 1 100%;text-align:start}
+.sw .pres{margin-top:.3rem}
+@media (max-width:640px){.sw-list{grid-template-columns:1fr}}
+
+/* flow map animation */
+.sheen{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.sheen::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);
+  transform:translateX(-120%);transition:transform .8s var(--ease)}
+.node.b .sheen::after,.node.pain .sheen::after,.node.res .sheen::after{background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.12) 50%,transparent 65%)}
+.node{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s,color .3s,background-position .7s var(--ease)}
+html .flow.in.done .node:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.55)}
+html .flow.in.done .node:hover .sheen::after{transform:translateX(120%)}
+html .flow.in.done .node.b:hover{border-color:rgba(255,255,255,.35);color:#fff}
+html .flow.in.done .node.pain:hover{border-style:solid;border-color:#fff}
+html .flow.in.done .node.a:hover{background-position:100% 100%;box-shadow:0 14px 34px rgba(255,255,255,.14)}
+html .flow.in.done .node.res:hover{box-shadow:0 14px 34px rgba(255,255,255,.12)}
+/* entrance: boxes rise in one after another, connectors fade in behind them */
+.js .flow .node{opacity:0;transform:translateY(16px)}
+.js .flow .node::before,.js .flow .node::after{opacity:0;transition:opacity .4s ease}
+.js .flow.in .node{opacity:1;transform:none;
+  transition:opacity .55s var(--ease) calc(var(--i) * 110ms),transform .55s var(--ease) calc(var(--i) * 110ms)}
+.js .flow.in .node::before,.js .flow.in .node::after{opacity:1;transition-delay:calc(var(--i) * 110ms)}
+.js .flow.in.done .node{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s,color .3s,background-position .7s var(--ease)}
+.js .flow .flow-bridge{opacity:0;transition:opacity .5s ease .45s}
+.js .flow.in .flow-bridge{opacity:1}
+@media (prefers-reduced-motion:reduce){.js .flow .node,.js .flow .node::before,.js .flow .node::after,.js .flow .flow-bridge{opacity:1!important;transform:none!important}}

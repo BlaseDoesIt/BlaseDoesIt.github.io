@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "6"  # bump to bust browser caches of style.css / i18n.js
+V = "7"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -117,6 +117,7 @@ PROJECTS = [
   },
   {
     "slug": "discounts",
+    "small": True,  # shown in "Smaller work" on the home page, no own page
     "kind": ("Odoo Rental add-on · sales", "إضافة لتطبيق التأجير في Odoo · مبيعات"),
     "title": ("Customer discounts", "خصومات العملاء"),
     "summary": ("Fixed discounts per customer, applied automatically to every line of every rental order.",
@@ -168,6 +169,7 @@ PROJECTS = [
   },
   {
     "slug": "upgrade",
+    "small": True,
     "kind": ("Migration · Odoo.sh", "ترحيل · Odoo.sh"),
     "title": ("Odoo 17 → 19 upgrade", "الترقية من Odoo 17 إلى 19"),
     "summary": ("Moved the company's live database and custom modules from Odoo 17 to Odoo 19 Enterprise on Odoo.sh.",
@@ -224,10 +226,11 @@ class Page:
         c = f' class="{cls}"' if cls else ""
         return f'<{tag}{c} data-i18n="{key}">{e(en)}</{tag}>'
 
-def lane(p, steps, kind, end_pair, end_kind):
+def lane(p, steps, kind, end_pair, end_kind, start=0):
+    # --i staggers the entrance animation across both lanes; .sheen is the hover shine layer
     nodes = "".join(
-        f'<li class="node {kind}"><span class="num">{i+1:02d}</span>{p.t(s)}</li>' for i, s in enumerate(steps))
-    end = f'<li class="node {end_kind}"><span class="num">{p.t(UI["problem" if end_kind=="pain" else "result"], key="u_"+end_kind)}</span>{p.t(end_pair)}</li>'
+        f'<li class="node {kind}" style="--i:{start+i}"><i class="sheen"></i><span class="num">{i+1:02d}</span>{p.t(s)}</li>' for i, s in enumerate(steps))
+    end = f'<li class="node {end_kind}" style="--i:{start+len(steps)}"><i class="sheen"></i><span class="num">{p.t(UI["problem" if end_kind=="pain" else "result"], key="u_"+end_kind)}</span>{p.t(end_pair)}</li>'
     return f'<ol class="lane">{nodes}{end}</ol>'
 
 def build(proj, nxt):
@@ -253,7 +256,7 @@ def build(proj, nxt):
     flow = f'''<div class="flow">
         <div class="flow-row">{T("before", cls="lane-label b")}{lane(p, proj["before"], "b", proj["pain"], "pain")}</div>
         <div class="flow-bridge" aria-hidden="true"></div>
-        <div class="flow-row">{T("after", cls="lane-label a")}{lane(p, proj["after"], "a", proj["result"], "res")}</div>
+        <div class="flow-row">{T("after", cls="lane-label a")}{lane(p, proj["after"], "a", proj["result"], "res", len(proj["before"]) + 2)}</div>
       </div>'''
     return f'''<!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -271,6 +274,7 @@ def build(proj, nxt):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css?v={V}">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
@@ -335,20 +339,28 @@ window.TITLES = {json.dumps({"en": title_en + " | Kosai Alhafez", "ar": title_ar
 window.AR = {json.dumps(p.ar, ensure_ascii=False, indent=0)};
 </script>
 <script src="../../i18n.js?v={V}"></script>
+<script src="../../anim.js?v={V}"></script>
 </body>
 </html>
 '''
 
 def cards():
-    """Project cards for the home page, printed so they can be pasted in."""
-    out, ar = [], {}
+    """Home page markup: project cards, plus the compact "smaller work" items."""
+    out, small, ar = [], [], {"sw_h": "أعمال أصغر"}
     for i, pr in enumerate(PROJECTS):
+        if pr.get("small"):
+            k = f"sw{i}"
+            ar[k+"t"], ar[k+"d"], ar[k+"r"] = e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1])
+            small.append(f'''          <div class="sw">
+            <h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>
+            <p data-i18n="{k}d">{e(pr["card"][0])}</p>
+            <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>
+          </div>''')
+            continue
         k = f"pc{i}"
         ar[k+"k"], ar[k+"t"], ar[k+"d"], ar[k+"r"] = (e(pr["kind"][1]), e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1]))
-        thumb = (f'<img src="img/{pr["thumb"]}" alt="" loading="lazy">' if pr["thumb"]
-                 else '<span class="thumb-type">17 → 19</span>')
         out.append(f'''        <a class="pcard" href="projects/{pr["slug"]}/">
-          <div class="thumb">{thumb}</div>
+          <div class="thumb"><img src="img/{pr["thumb"]}" alt="" loading="lazy"></div>
           <div class="pbody">
             <span class="kind" data-i18n="{k}k">{e(pr["kind"][0])}</span>
             <h3 data-i18n="{k}t">{e(pr["title"][0])}</h3>
@@ -356,21 +368,26 @@ def cards():
             <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>
           </div>
         </a>''')
-    return "\n".join(out), ar
+    return NL.join(out), NL.join(small), ar
+
+NL = "\n"
+
+def splice(s, a, b, inner):
+    return s[:s.index(a) + len(a)] + NL + inner + NL + "        " + s[s.index(b):]
 
 if __name__ == "__main__":
     root = os.path.join(os.path.dirname(__file__), "..")
-    for i, pr in enumerate(PROJECTS):
+    big = [pr for pr in PROJECTS if not pr.get("small")]
+    for i, pr in enumerate(big):
         d = os.path.join(root, "projects", pr["slug"]); os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, "index.html"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(build(pr, PROJECTS[(i + 1) % len(PROJECTS)]))
-    html_cards, ar = cards()
-    # splice cards into the home page between the markers
+        with open(os.path.join(d, "index.html"), "w", encoding="utf-8", newline=NL) as f:
+            f.write(build(pr, big[(i + 1) % len(big)]))
+    grid, small, ar = cards()
     ip = os.path.join(root, "index.html")
     s = open(ip, encoding="utf-8").read()
-    a, b = "<!-- projects:start -->", "<!-- projects:end -->"
-    s = s[:s.index(a) + len(a)] + "\n" + html_cards + "\n        " + s[s.index(b):]
+    s = splice(s, "<!-- projects:start -->", "<!-- projects:end -->", grid)
+    s = splice(s, "<!-- small:start -->", "<!-- small:end -->", small)
     a, b = "/* project-cards:start */", "/* project-cards:end */"
-    s = s[:s.index(a) + len(a)] + "\n" + "".join(f'  {k}:{json.dumps(v, ensure_ascii=False)},\n' for k, v in ar.items()) + "  " + s[s.index(b):]
-    open(ip, "w", encoding="utf-8", newline="\n").write(s)
-    print("built", len(PROJECTS), "project pages")
+    s = s[:s.index(a) + len(a)] + NL + "".join(f'  {k}:{json.dumps(v, ensure_ascii=False)},' + NL for k, v in ar.items()) + "  " + s[s.index(b):]
+    open(ip, "w", encoding="utf-8", newline=NL).write(s)
+    print("built", len(big), "project pages")

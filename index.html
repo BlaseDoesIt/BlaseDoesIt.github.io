@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -126,15 +126,6 @@
             <span class="pres" data-i18n="pc2r">Replaced a WhatsApp attendance group</span>
           </div>
         </a>
-        <a class="pcard" href="projects/discounts/">
-          <div class="thumb"><img src="img/discount.webp" alt="" loading="lazy"></div>
-          <div class="pbody">
-            <span class="kind" data-i18n="pc3k">Odoo Rental add-on · sales</span>
-            <h3 data-i18n="pc3t">Customer discounts</h3>
-            <p data-i18n="pc3d">Set a customer&#x27;s discount once, applied to every order.</p>
-            <span class="pres" data-i18n="pc3r">No more forgotten or wrong discounts</span>
-          </div>
-        </a>
         <a class="pcard" href="projects/analytics/">
           <div class="thumb"><img src="img/revenue.webp" alt="" loading="lazy"></div>
           <div class="pbody">
@@ -144,16 +135,24 @@
             <span class="pres" data-i18n="pc4r">Investor reports without spreadsheets</span>
           </div>
         </a>
-        <a class="pcard" href="projects/upgrade/">
-          <div class="thumb"><span class="thumb-type">17 → 19</span></div>
-          <div class="pbody">
-            <span class="kind" data-i18n="pc5k">Migration · Odoo.sh</span>
-            <h3 data-i18n="pc5t">Odoo 17 → 19 upgrade</h3>
-            <p data-i18n="pc5d">A live company database moved two versions forward.</p>
-            <span class="pres" data-i18n="pc5r">Tested on staging before going live</span>
-          </div>
-        </a>
         <!-- projects:end -->
+      </div>
+      <div class="smallwork">
+        <h4 class="sw-h" data-i18n="sw_h">Smaller work</h4>
+        <div class="sw-list">
+        <!-- small:start -->
+          <div class="sw">
+            <h4 data-i18n="sw3t">Customer discounts</h4>
+            <p data-i18n="sw3d">Set a customer&#x27;s discount once, applied to every order.</p>
+            <span class="pres" data-i18n="sw3r">No more forgotten or wrong discounts</span>
+          </div>
+          <div class="sw">
+            <h4 data-i18n="sw5t">Odoo 17 → 19 upgrade</h4>
+            <p data-i18n="sw5d">A live company database moved two versions forward.</p>
+            <span class="pres" data-i18n="sw5r">Tested on staging before going live</span>
+          </div>
+        <!-- small:end -->
+        </div>
       </div>
 
       <div class="acct">
@@ -289,6 +288,7 @@ window.AR = {
   m1:"طلب تأجير شهرياً", m2:"فاتورة شهرياً", m3:"عميلاً نشطاً", m4:"مجموعة معدات", m5:"قطعة مُتتبَّعة بالرقم التسلسلي", m6:"مستخدمين في المكتب يومياً",
   pg_h:"ما بنيته هناك",
   /* project-cards:start */
+  sw_h:"أعمال أصغر",
   pc0k:"تطبيق Odoo مخصص · التأجير والأصول",
   pc0t:"Rentory",
   pc0d:"الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد.",
@@ -301,18 +301,16 @@ window.AR = {
   pc2t:"حارس الدوام",
   pc2d:"تسجيل حضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي.",
   pc2r:"حلّ محل مجموعة واتساب للدوام",
-  pc3k:"إضافة لتطبيق التأجير في Odoo · مبيعات",
-  pc3t:"خصومات العملاء",
-  pc3d:"اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب.",
-  pc3r:"لا خصومات منسية أو خاطئة بعد اليوم",
+  sw3t:"خصومات العملاء",
+  sw3d:"اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب.",
+  sw3r:"لا خصومات منسية أو خاطئة بعد اليوم",
   pc4k:"تقارير Odoo · بيانات التأجير",
   pc4t:"تحليلات الإيرادات",
   pc4d:"تقارير الإيرادات والأكثر تأجيراً بنقرة واحدة.",
   pc4r:"تقارير المستثمرين دون جداول Excel",
-  pc5k:"ترحيل · Odoo.sh",
-  pc5t:"الترقية من Odoo 17 إلى 19",
-  pc5d:"قاعدة بيانات شركة حية نُقلت إصدارين للأمام.",
-  pc5r:"اختُبرت على نسخة تجريبية قبل الإطلاق",
+  sw5t:"الترقية من Odoo 17 إلى 19",
+  sw5d:"قاعدة بيانات شركة حية نُقلت إصدارين للأمام.",
+  sw5r:"اختُبرت على نسخة تجريبية قبل الإطلاق",
   /* project-cards:end */
   acct_h:"الجانب المحاسبي",
   acct_p:"لا أكتب الكود فقط، بل أمسك الدفاتر التي يغذّيها، وهذا يعني اجتماعات أقل لشرح ما هو قيد اليومية.",
@@ -356,6 +354,6 @@ window.AR = {
   foot:"© 2026 محمد قصي الحافظ"
 };
 </script>
-<script src="i18n.js?v=6"></script>
+<script src="i18n.js?v=7"></script>
 </body>
 </html>
