@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "10"  # bump to bust browser caches of style.css / i18n.js
+V = "11"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -20,6 +20,7 @@ PROJECTS = [
              "الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد."),
     "card_result": ("0 customer requests lost since launch", "0 طلبات عملاء ضاعت منذ الإطلاق"),
     "thumb": "rentory-order.webp",
+    "launched": ("Launched on 1 August 2026", "أُطلق في 1 أغسطس 2026"),
     "stats": [("0", ("customer requests lost since launch", "طلبات عملاء ضاعت منذ الإطلاق")),
               ("10 → 1-2", ("order mistakes", "أخطاء في الطلبات")),
               ("5 → 0-1", ("critical incidents per week", "حوادث حرجة أسبوعياً")),
@@ -214,8 +215,8 @@ UI = {
   "shots_h": ("Screenshots", "لقطات الشاشة"),
   "src_btn": ("View the source code ↗", "عرض الكود المصدري ↗"),
   "src_link": ("Source code ↗", "الكود المصدري ↗"),
-  "open_src": ("Open-source", "مفتوح المصدر"),
-  "closed_src": ("Closed-source", "مغلق المصدر"),
+  "open_src": ("OPEN-SOURCE", "مفتوح المصدر"),
+  "closed_src": ("CLOSED-SOURCE", "مغلق المصدر"),
   "next": ("Next project", "المشروع التالي"),
   "need_h": ("Need something like this?", "تحتاج شيئاً مشابهاً؟"),
   "need_p": ("Tell me what your team does by hand today. A 15 minute call is enough to see if I can automate it.",
@@ -301,9 +302,11 @@ def build(proj, nxt):
 <main>
   <div class="wrap hero proj-hero">
     <a class="crumb" href="../../#work" data-i18n="u_back">← All projects</a>
+    {lic}
     {p.t(proj["kind"], tag="p", cls="eyebrow")}
     {p.t(proj["title"], tag="h1", cls="page-h1")}
     {p.t(proj["summary"], tag="p", cls="lead")}
+    {p.t(proj["launched"], tag="p", cls="launch") if proj.get("launched") else ""}
     <div class="stats n{len(proj["stats"])}">{stats}</div>
   </div>
 
@@ -322,7 +325,6 @@ def build(proj, nxt):
       </div>
       <div>
         {T("tech_h", tag="h3")}
-        {lic}
         <div class="chips">{tech}</div>
         {src}
       </div>
@@ -380,20 +382,24 @@ def cards():
                 ar["sw_src"] = e(UI["src_link"][1])
                 src = NL + f'            <a class="src" href="{pr["repo"]}" target="_blank" rel="noopener" data-i18n="sw_src">{e(UI["src_link"][0])}</a>'
             small.append(f'''          <div class="sw">
-            <h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>{lic_tag(pr, ar)}
+            {lic_tag(pr, ar)}<h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>
             <p data-i18n="{k}d">{e(pr["card"][0])}</p>
             <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>{src}
           </div>''')
             continue
         k = f"pc{i}"
+        launch = ""
+        if pr.get("launched"):
+            ar[k+"l"] = e(pr["launched"][1])
+            launch = NL + f'            <span class="launch" data-i18n="{k}l">{e(pr["launched"][0])}</span>'
         ar[k+"k"], ar[k+"t"], ar[k+"d"], ar[k+"r"] = (e(pr["kind"][1]), e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1]))
         out.append(f'''        <a class="pcard" href="projects/{pr["slug"]}/">
+          {lic_tag(pr, ar)}
           <div class="thumb"><img src="img/{pr["thumb"]}" alt="" loading="lazy"></div>
           <div class="pbody">
             <span class="kind" data-i18n="{k}k">{e(pr["kind"][0])}</span>
-            {lic_tag(pr, ar)}
             <h3 data-i18n="{k}t">{e(pr["title"][0])}</h3>
-            <p data-i18n="{k}d">{e(pr["card"][0])}</p>
+            <p data-i18n="{k}d">{e(pr["card"][0])}</p>{launch}
             <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>
           </div>
         </a>''')
