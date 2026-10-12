@@ -93,13 +93,13 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] .mod h3,html[lang="ar"] .b
 .photo figcaption b{display:block;font-size:1.05rem}
 @media (max-width:760px){.hero-grid{grid-template-columns:1fr}.photo{justify-self:start;max-width:300px}}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:3.5rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:3.5rem}
 .stat{background:#060606;padding:1.2rem 1.1rem;transition:background-color .3s}
 .stat:hover{background:#111}
 .stat:hover b{background-position:100% 0}
 .stat b{display:block;font:700 clamp(1.5rem,2.8vw,2.1rem)/1.1 var(--helv);letter-spacing:-.03em}
 .stat span{display:block;color:var(--muted);font-size:.9rem;margin-top:.35rem}
-@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.stats{grid-template-columns:1fr}}
 
 /* sections */
 section{padding:4.5rem 0;border-top:1px solid var(--line)}

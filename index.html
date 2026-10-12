@@ -61,7 +61,6 @@
       <div class="stat"><b>0</b><span data-i18n="s1t">customer requests lost since launch</span></div>
       <div class="stat"><b>50</b><span data-i18n="s2t">employees working on the system</span></div>
       <div class="stat"><b>800+</b><span data-i18n="s3t">equipment items tracked by serial</span></div>
-      <div class="stat"><b>9,700+</b><span data-i18n="s4t">attendance check-ins logged automatically</span></div>
     </div>
   </div>
 
@@ -110,7 +109,7 @@
           <div class="result" data-i18n="r_res">Order mistakes dropped from around 10 to 1 or 2, and critical incidents from about 5 a week to 1 or none. No customer request has been lost since it went live.</div>
         </div>
         <div class="shots">
-          <a href="img/rentory-order.webp" target="_blank"><img src="img/rentory-order.webp" alt="Rentory rental order with timeline, customer checklist and payment" loading="lazy" width="1233" height="794"></a>
+          <a href="img/rentory-order.webp" target="_blank"><img src="img/rentory-order.webp" alt="Rentory rental order with timeline, customer checklist and payment" loading="lazy" width="1224" height="924"></a>
           <div class="shots two">
             <a href="img/rentory-serials.webp" target="_blank"><img src="img/rentory-serials.webp" alt="Equipment record with serials, cost and rental revenue" loading="lazy" width="1255" height="817"></a>
             <a href="img/rentory-assets.webp" target="_blank"><img src="img/rentory-assets.webp" alt="Assetory equipment catalog with availability" loading="lazy" width="1400" height="787"></a>
@@ -125,11 +124,11 @@
           <h3 data-i18n="i_h">Invoices and vouchers</h3>
           <dl class="ba">
             <dt class="b" data-i18n="before">Before</dt>
-            <dd class="before" data-i18n="i_b">Custom invoices were put together by hand, about 2 hours each. Receipt and payment vouchers were written out separately from the accounting.</dd>
+            <dd class="before" data-i18n="i_b">Custom invoices and receipt or payment vouchers were put together by hand, about an hour each, separately from the accounting.</dd>
             <dt class="a" data-i18n="after">After</dt>
             <dd class="after" data-i18n="i_a">Arabic invoices print straight from the rental order in the company's design. Receipt and payment vouchers print from any journal entry, with the amount written out in words in correct Arabic grammar for each currency, on A5 paper to match the existing stationery.</dd>
           </dl>
-          <div class="result" data-i18n="i_res">A custom invoice now takes 5 minutes instead of 2 hours.</div>
+          <div class="result" data-i18n="i_res">Each invoice or voucher now takes 2 minutes instead of an hour.</div>
         </div>
         <div class="shots docs">
           <a href="img/invoice.webp" target="_blank"><img src="img/invoice.webp" alt="Arabic rental invoice generated from Odoo" loading="lazy" width="730" height="1015"></a>
@@ -147,7 +146,7 @@
             <dt class="a" data-i18n="after">After</dt>
             <dd class="after" data-i18n="a_a">Check in happens in Odoo and is verified with a GPS geofence around the workplace. Each employee has their own shift. Anyone on site who hasn't checked in, or is still checked in after their shift, gets a reminder every 30 minutes. Overtime is requested with a reason, approved by a manager, and written into attendance automatically.</dd>
           </dl>
-          <div class="result" data-i18n="a_res">9,700+ presence checks logged automatically so far. Hours come from records, not chat messages.</div>
+          <div class="result" data-i18n="a_res">Working hours now come from verified records, not chat messages.</div>
         </div>
         <div class="shots">
           <a href="img/attendance.webp" target="_blank"><img src="img/attendance.webp" alt="Presence signals log with GPS matching (names hidden)" loading="lazy" width="1400" height="514"></a>
@@ -293,7 +292,7 @@ window.AR = {
   avail:"متاح للعملاء في الخليج وحول العالم، بالعربية والإنجليزية.",
   cap_name:"قصي الحافظ", cap_role:"مطوّر أنظمة أعمال، سكون لتأجير المعدات",
   s1t:"طلبات عملاء ضاعت منذ الإطلاق", s2t:"موظفاً يعملون على النظام",
-  s3t:"قطعة معدات مُتتبَّعة بالرقم التسلسلي", s4t:"تسجيل حضور مُسجَّل تلقائياً",
+  s3t:"قطعة معدات مُتتبَّعة بالرقم التسلسلي",
   pain_h:"مشاكل حللتها بالفعل",
   pain_sub:"كل واحدة من هذه كانت مشكلة حقيقية في الشركة التي أعمل بها، وكلها اليوم يتولاها النظام الذي بنيته.",
   pain1:"الدوام يُسجَّل في مجموعة واتساب، وأحدهم ينسخ الأوقات يدوياً.",
@@ -313,14 +312,14 @@ window.AR = {
   r_cap:"طلب تأجير، والأرقام التسلسلية لكاميرا مع تكلفتها وإيرادها، وكتالوج المعدات.",
   i_kind:"مستندات محاسبية · بالعربية",
   i_h:"الفواتير والسندات",
-  i_b:"الفواتير المخصصة كانت تُجهَّز يدوياً، نحو ساعتين لكل واحدة. وسندات القبض والدفع كانت تُكتب بمعزل عن المحاسبة.",
+  i_b:"الفواتير المخصصة وسندات القبض والدفع كانت تُجهَّز يدوياً، نحو ساعة لكل واحدة، بمعزل عن المحاسبة.",
   i_a:"الفواتير العربية تُطبع مباشرة من طلب التأجير بتصميم الشركة. وسندات القبض والدفع تُطبع من أي قيد يومية، مع كتابة المبلغ بالحروف بقواعد عربية صحيحة لكل عملة، وعلى ورق A5 ليطابق القرطاسية الحالية.",
-  i_res:"الفاتورة المخصصة تأخذ الآن 5 دقائق بدلاً من ساعتين.",
+  i_res:"كل فاتورة أو سند يأخذ الآن دقيقتين بدلاً من ساعة.",
   a_kind:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
   a_h:"حارس الدوام (Attendance Shift Guard)",
   a_b:"كان الموظفون يكتبون أوقات دخولهم وخروجهم في مجموعة واتساب، وكان على أحدهم قراءة الرسائل وتفريغ الساعات.",
   a_a:"تسجيل الحضور يتم في Odoo ويُتحقق منه بسياج جغرافي GPS حول مكان العمل. لكل موظف دوامه الخاص. ومن يكون في الموقع ولم يسجّل دخوله، أو بقي مسجّلاً بعد انتهاء دوامه، يصله تذكير كل 30 دقيقة. والعمل الإضافي يُطلب مع سبب، ويوافق عليه المدير، ثم يُكتب في سجل الحضور تلقائياً.",
-  a_res:"أكثر من 9,700 إشارة حضور سُجّلت تلقائياً حتى الآن. الساعات تأتي من السجلات، لا من رسائل المحادثة.",
+  a_res:"ساعات العمل تأتي الآن من سجلات موثّقة، لا من رسائل المحادثة.",
   a_cap:"سجل الحضور مع المسافة عن مكان العمل عبر GPS. أسماء الموظفين مخفية.",
   d_h:"خصومات العملاء",
   d_b:"كان على الموظفين تذكّر خصم كل عميل وكتابته على كل سطر.",
