@@ -271,3 +271,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
   *,*::before,*::after{transition:none!important}
   .card:hover,.price:hover,.btn:hover,.result:hover,.g:hover,.btn.solid:hover,.ba dd.after:hover,.ba-mini .a:hover{transform:none!important}
 }
+
+/* justified body text (single lines and last lines stay aligned to the start) */
+p,dd,.ticks li,.result,.ba-mini > span,.faq details p{text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto}
