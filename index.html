@@ -108,9 +108,9 @@
           </dl>
           <div class="result" data-i18n="r_res">Order mistakes dropped from around 10 to 1 or 2, and critical incidents from about 5 a week to 1 or none. No customer request has been lost since it went live.</div>
         </div>
-        <div class="shots">
+        <div class="shots rent">
           <a href="img/rentory-order.webp" target="_blank"><img src="img/rentory-order.webp" alt="Rentory rental order with timeline, customer checklist and payment" loading="lazy" width="1224" height="924"></a>
-          <div class="shots two">
+          <div class="stack">
             <a href="img/rentory-serials.webp" target="_blank"><img src="img/rentory-serials.webp" alt="Equipment record with serials, cost and rental revenue" loading="lazy" width="1255" height="817"></a>
             <a href="img/rentory-assets.webp" target="_blank"><img src="img/rentory-assets.webp" alt="Assetory equipment catalog with availability" loading="lazy" width="1400" height="787"></a>
           </div>
@@ -132,7 +132,8 @@
         </div>
         <div class="shots docs">
           <a href="img/invoice.webp" target="_blank"><img src="img/invoice.webp" alt="Arabic rental invoice generated from Odoo" loading="lazy" width="730" height="1015"></a>
-          <a href="img/voucher.webp" target="_blank" style="align-self:start"><img src="img/voucher.webp" alt="Receipt voucher with amount in Arabic words" loading="lazy" width="1342" height="690"></a>
+          <a href="img/voucher.webp" target="_blank"><img src="img/voucher.webp" alt="Receipt voucher with amount in Arabic words" loading="lazy" width="1342" height="690"></a>
+          <figcaption data-i18n="i_cap">An Arabic invoice and a receipt voucher, printed straight from Odoo. Customer name hidden.</figcaption>
         </div>
       </article>
 
@@ -168,9 +169,9 @@
           <p class="ba-mini"><span class="a"><i data-i18n="done">Done</i><span data-i18n="g_a" style="display:inline;margin:0">Migrated the company's database and custom modules to Odoo 19 Enterprise on Odoo.sh, with staging tested before going live.</span></span></p>
         </div>
       </div>
-      <div class="shots" style="margin-top:1rem">
+      <div class="shots" style="margin-top:1.2rem">
         <a href="img/revenue.webp" target="_blank"><img src="img/revenue.webp" alt="Paid revenue by equipment category" loading="lazy" width="1400" height="662"></a>
-        <figcaption data-i18n="rev_cap">Paid revenue by equipment category, straight from the rental data.</figcaption>
+        <figcaption data-i18n="rev_cap">Revenue analytics: paid revenue by equipment category, straight from the rental data.</figcaption>
       </div>
 
       <div class="acct">
@@ -314,6 +315,7 @@ window.AR = {
   i_h:"الفواتير والسندات",
   i_b:"الفواتير المخصصة وسندات القبض والدفع كانت تُجهَّز يدوياً، نحو ساعة لكل واحدة، بمعزل عن المحاسبة.",
   i_a:"الفواتير العربية تُطبع مباشرة من طلب التأجير بتصميم الشركة. وسندات القبض والدفع تُطبع من أي قيد يومية، مع كتابة المبلغ بالحروف بقواعد عربية صحيحة لكل عملة، وعلى ورق A5 ليطابق القرطاسية الحالية.",
+  i_cap:"فاتورة عربية وسند قبض، يُطبعان مباشرة من Odoo. اسم العميل مخفي.",
   i_res:"كل فاتورة أو سند يأخذ الآن دقيقتين بدلاً من ساعة.",
   a_kind:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
   a_h:"حارس الدوام (Attendance Shift Guard)",
@@ -329,7 +331,7 @@ window.AR = {
   t_a:"رسوم بيانية حسب الشهر والسنة والفئة والعميل والرقم التسلسلي، بنقرة واحدة.",
   g_h:"الترقية من Odoo 17 إلى 19",
   g_a:"ترحيل قاعدة بيانات الشركة ووحداتها المخصصة إلى Odoo 19 Enterprise على Odoo.sh، مع اختبار نسخة تجريبية قبل الإطلاق.",
-  rev_cap:"الإيرادات المدفوعة حسب فئة المعدات، مباشرة من بيانات التأجير.",
+  rev_cap:"تحليلات الإيرادات: الإيرادات المدفوعة حسب فئة المعدات، مباشرة من بيانات التأجير.",
   acct_h:"الجانب المحاسبي",
   acct_p:"لا أكتب الكود فقط، بل أمسك الدفاتر التي يغذّيها، وهذا يعني اجتماعات أقل لشرح ما هو قيد اليومية.",
   acct_list:"<li>قيود اليومية والإيرادات والمصاريف ودفعات العملاء، مؤتمتة حيث أمكن</li><li>تحليل شهري للإيرادات ورأس المال للإدارة والمستثمرين</li><li>سجلات الأصول الثابتة مرتبطة بمخزون التأجير</li><li>أكثر من 70 مراجعة لأسعار المعدات شهرياً للعملاء والمستثمرين</li><li>تقارير المستثمرين والأرصدة الداخلية</li><li>أسعار المعدات وبياناتها على sokoonrental.com عبر cPanel وSQLite</li>",
