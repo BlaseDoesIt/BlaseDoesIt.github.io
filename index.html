@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -96,78 +96,64 @@
         </div>
       </div>
 
-      <article class="mod">
-        <div>
-          <div class="kind" data-i18n="r_kind">Custom Odoo app · rental and assets</div>
-          <h3>Rentory</h3>
-          <dl class="ba">
-            <dt class="b" data-i18n="before">Before</dt>
-            <dd class="before" data-i18n="r_b">Odoo's Rental and Inventory apps couldn't track equipment we rented in from partners. Contracts and customer IDs were checked on paper, late days were counted by hand, and customer questions and orders got forgotten.</dd>
-            <dt class="a" data-i18n="after">After</dt>
-            <dd class="after" data-i18n="r_a">One app with two views: Rental for orders and Assetory for equipment. Every serial has a status, location and rental history. Availability is checked per unit, barcodes are scanned into orders, a checklist shows which contracts are signed and which ID was left as guarantee, deposits and late fees are calculated, and gear rented in from partners is tracked with its supplier. Each unit is linked to its fixed asset in Accounting, so cost and rental revenue sit side by side.</dd>
-          </dl>
-          <div class="result" data-i18n="r_res">Order mistakes dropped from around 10 to 1 or 2, and critical incidents from about 5 a week to 1 or none. No customer request has been lost since it went live.</div>
-        </div>
-        <div class="shots rent">
-          <a href="img/rentory-order.webp" target="_blank"><img src="img/rentory-order.webp" alt="Rentory rental order with timeline, customer checklist and payment" loading="lazy" width="1224" height="924"></a>
-          <div class="stack">
-            <a href="img/rentory-serials.webp" target="_blank"><img src="img/rentory-serials.webp" alt="Equipment record with serials, cost and rental revenue" loading="lazy" width="1255" height="817"></a>
-            <a href="img/rentory-assets.webp" target="_blank"><img src="img/rentory-assets.webp" alt="Assetory equipment catalog with availability" loading="lazy" width="1400" height="787"></a>
+      <h3 class="pgrid-h" data-i18n="pg_h">What I built there</h3>
+      <div class="pgrid">
+        <!-- projects:start -->
+        <a class="pcard" href="projects/rentory/">
+          <div class="thumb"><img src="img/rentory-order.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc0k">Custom Odoo app · rental and assets</span>
+            <h3 data-i18n="pc0t">Rentory</h3>
+            <p data-i18n="pc0d">Orders, equipment, contracts, deposits and late fees in one app.</p>
+            <span class="pres" data-i18n="pc0r">0 customer requests lost since launch</span>
           </div>
-        </div>
-      </article>
-
-      <article class="mod">
-        <div>
-          <div class="kind" data-i18n="i_kind">Accounting documents · Arabic</div>
-          <h3 data-i18n="i_h">Invoices and vouchers</h3>
-          <dl class="ba">
-            <dt class="b" data-i18n="before">Before</dt>
-            <dd class="before" data-i18n="i_b">Custom invoices and receipt or payment vouchers were put together by hand, about an hour each, separately from the accounting.</dd>
-            <dt class="a" data-i18n="after">After</dt>
-            <dd class="after" data-i18n="i_a">Arabic invoices print straight from the rental order in the company's design. Receipt and payment vouchers print from any journal entry, with the amount written out in words in correct Arabic grammar for each currency, on A5 paper to match the existing stationery.</dd>
-          </dl>
-          <div class="result" data-i18n="i_res">Each invoice or voucher now takes 2 minutes instead of an hour.</div>
-        </div>
-        <div class="shots docs">
-          <a href="img/invoice.webp" target="_blank"><img src="img/invoice.webp" alt="Arabic rental invoice generated from Odoo" loading="lazy" width="730" height="1015"></a>
-          <a href="img/voucher.webp" target="_blank"><img src="img/voucher.webp" alt="Receipt voucher with amount in Arabic words" loading="lazy" width="1342" height="690"></a>
-        </div>
-      </article>
-
-      <article class="mod">
-        <div>
-          <div class="kind" data-i18n="a_kind">Odoo Attendances add-on · HR</div>
-          <h3 data-i18n="a_h">Attendance Shift Guard</h3>
-          <dl class="ba">
-            <dt class="b" data-i18n="before">Before</dt>
-            <dd class="before" data-i18n="a_b">Employees posted their sign in and sign out times in a WhatsApp group. Someone had to read the messages and type the hours up.</dd>
-            <dt class="a" data-i18n="after">After</dt>
-            <dd class="after" data-i18n="a_a">Check in happens in Odoo and is verified with a GPS geofence around the workplace. Each employee has their own shift. Anyone on site who hasn't checked in, or is still checked in after their shift, gets a reminder every 30 minutes. Overtime is requested with a reason, approved by a manager, and written into attendance automatically.</dd>
-          </dl>
-          <div class="result" data-i18n="a_res">Working hours now come from verified records, not chat messages.</div>
-        </div>
-        <div class="shots">
-          <a href="img/attendance.webp" target="_blank"><img src="img/attendance.webp" alt="Presence signals log with GPS matching (names hidden)" loading="lazy" width="1400" height="514"></a>
-        </div>
-      </article>
-
-      <div class="small-mods">
-        <div class="card">
-          <h3 data-i18n="d_h">Customer discounts</h3>
-          <p class="ba-mini"><span class="b"><i data-i18n="before">Before</i><span data-i18n="d_b" style="display:inline;margin:0">Staff had to remember each customer's discount and type it on every line.</span></span><span class="a"><i data-i18n="after">After</i><span data-i18n="d_a" style="display:inline;margin:0">Set once per customer, applied automatically to every rental order.</span></span></p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="t_h">Revenue analytics</h3>
-          <p class="ba-mini"><span class="b"><i data-i18n="before">Before</i><span data-i18n="t_b" style="display:inline;margin:0">Revenue per item was worked out in spreadsheets for investor reports.</span></span><span class="a"><i data-i18n="after">After</i><span data-i18n="t_a" style="display:inline;margin:0">Charts by month, year, category, customer and serial, one click away.</span></span></p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="g_h">Odoo 17 → 19 upgrade</h3>
-          <p class="ba-mini"><span class="a"><i data-i18n="done">Done</i><span data-i18n="g_a" style="display:inline;margin:0">Migrated the company's database and custom modules to Odoo 19 Enterprise on Odoo.sh, with staging tested before going live.</span></span></p>
-        </div>
-      </div>
-      <div class="shots" style="margin-top:1.2rem">
-        <a href="img/revenue.webp" target="_blank"><img src="img/revenue.webp" alt="Paid revenue by equipment category" loading="lazy" width="1400" height="662"></a>
+        </a>
+        <a class="pcard" href="projects/invoices/">
+          <div class="thumb"><img src="img/voucher.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc1k">Accounting documents · Arabic</span>
+            <h3 data-i18n="pc1t">Invoices and vouchers</h3>
+            <p data-i18n="pc1d">Arabic invoices and vouchers printed straight from Odoo.</p>
+            <span class="pres" data-i18n="pc1r">1 hour → 2 minutes per document</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/shift-guard/">
+          <div class="thumb"><img src="img/attendance.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc2k">Odoo Attendances add-on · HR</span>
+            <h3 data-i18n="pc2t">Attendance Shift Guard</h3>
+            <p data-i18n="pc2d">GPS check-in, personal shifts, reminders and overtime approval.</p>
+            <span class="pres" data-i18n="pc2r">Replaced a WhatsApp attendance group</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/discounts/">
+          <div class="thumb"><img src="img/discount.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc3k">Odoo Rental add-on · sales</span>
+            <h3 data-i18n="pc3t">Customer discounts</h3>
+            <p data-i18n="pc3d">Set a customer&#x27;s discount once, applied to every order.</p>
+            <span class="pres" data-i18n="pc3r">No more forgotten or wrong discounts</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/analytics/">
+          <div class="thumb"><img src="img/revenue.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc4k">Odoo reporting · rental data</span>
+            <h3 data-i18n="pc4t">Revenue analytics</h3>
+            <p data-i18n="pc4d">Revenue and most-rented reports, one click away.</p>
+            <span class="pres" data-i18n="pc4r">Investor reports without spreadsheets</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/upgrade/">
+          <div class="thumb"><span class="thumb-type">17 → 19</span></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc5k">Migration · Odoo.sh</span>
+            <h3 data-i18n="pc5t">Odoo 17 → 19 upgrade</h3>
+            <p data-i18n="pc5d">A live company database moved two versions forward.</p>
+            <span class="pres" data-i18n="pc5r">Tested on staging before going live</span>
+          </div>
+        </a>
+        <!-- projects:end -->
       </div>
 
       <div class="acct">
@@ -301,29 +287,33 @@ window.AR = {
   work_h:"أين أعمل: سكون لتأجير المعدات",
   work_p:"شركة لتأجير الكاميرات والمعدات الإعلامية في دمشق، تابعة لسكون القابضة. منذ أيلول 2025 أدير نظام Odoo 19 Enterprise لديهم، وأكتب وحداتهم المخصصة، وأتولى المحاسبة. كل ما يلي يعمل فعلياً ويُستخدم يومياً.",
   m1:"طلب تأجير شهرياً", m2:"فاتورة شهرياً", m3:"عميلاً نشطاً", m4:"مجموعة معدات", m5:"قطعة مُتتبَّعة بالرقم التسلسلي", m6:"مستخدمين في المكتب يومياً",
-  before:"قبل", after:"بعد", done:"تم",
-  r_kind:"تطبيق Odoo مخصص · التأجير والأصول",
-  r_b:"تطبيقا التأجير والمخزون في Odoo لم يكونا قادرين على تتبع المعدات التي نستأجرها من الشركاء. العقود وهويات العملاء كانت تُراجع على الورق، وأيام التأخير تُحسب يدوياً، وأسئلة العملاء وطلباتهم كانت تُنسى.",
-  r_a:"تطبيق واحد بواجهتين: Rental للطلبات وAssetory للمعدات. لكل رقم تسلسلي حالة وموقع وسجل تأجير. التوفر يُفحص لكل قطعة، والباركود يُمسح مباشرة إلى الطلب، وقائمة تحقق تُظهر العقود الموقّعة والهوية المتروكة كضمان، والتأمين وغرامات التأخير تُحسب تلقائياً، والمعدات المستأجرة من الشركاء تُتتبع مع مورّدها. وكل قطعة مرتبطة بأصلها الثابت في المحاسبة، فتظهر التكلفة وإيراد التأجير جنباً إلى جنب.",
-  r_res:"انخفضت أخطاء الطلبات من نحو 10 إلى 1 أو 2، والحوادث الحرجة من نحو 5 أسبوعياً إلى واحدة أو لا شيء. ولم يضع أي طلب لعميل منذ إطلاقه.",
-  i_kind:"مستندات محاسبية · بالعربية",
-  i_h:"الفواتير والسندات",
-  i_b:"الفواتير المخصصة وسندات القبض والدفع كانت تُجهَّز يدوياً، نحو ساعة لكل واحدة، بمعزل عن المحاسبة.",
-  i_a:"الفواتير العربية تُطبع مباشرة من طلب التأجير بتصميم الشركة. وسندات القبض والدفع تُطبع من أي قيد يومية، مع كتابة المبلغ بالحروف بقواعد عربية صحيحة لكل عملة، وعلى ورق A5 ليطابق القرطاسية الحالية.",
-  i_res:"كل فاتورة أو سند يأخذ الآن دقيقتين بدلاً من ساعة.",
-  a_kind:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
-  a_h:"حارس الدوام (Attendance Shift Guard)",
-  a_b:"كان الموظفون يكتبون أوقات دخولهم وخروجهم في مجموعة واتساب، وكان على أحدهم قراءة الرسائل وتفريغ الساعات.",
-  a_a:"تسجيل الحضور يتم في Odoo ويُتحقق منه بسياج جغرافي GPS حول مكان العمل. لكل موظف دوامه الخاص. ومن يكون في الموقع ولم يسجّل دخوله، أو بقي مسجّلاً بعد انتهاء دوامه، يصله تذكير كل 30 دقيقة. والعمل الإضافي يُطلب مع سبب، ويوافق عليه المدير، ثم يُكتب في سجل الحضور تلقائياً.",
-  a_res:"ساعات العمل تأتي الآن من سجلات موثّقة، لا من رسائل المحادثة.",
-  d_h:"خصومات العملاء",
-  d_b:"كان على الموظفين تذكّر خصم كل عميل وكتابته على كل سطر.",
-  d_a:"يُضبط مرة واحدة لكل عميل، ويُطبَّق تلقائياً على كل طلب تأجير.",
-  t_h:"تحليلات الإيرادات",
-  t_b:"إيراد كل قطعة كان يُحسب في جداول Excel لتقارير المستثمرين.",
-  t_a:"رسوم بيانية حسب الشهر والسنة والفئة والعميل والرقم التسلسلي، بنقرة واحدة.",
-  g_h:"الترقية من Odoo 17 إلى 19",
-  g_a:"ترحيل قاعدة بيانات الشركة ووحداتها المخصصة إلى Odoo 19 Enterprise على Odoo.sh، مع اختبار نسخة تجريبية قبل الإطلاق.",
+  pg_h:"ما بنيته هناك",
+  /* project-cards:start */
+  pc0k:"تطبيق Odoo مخصص · التأجير والأصول",
+  pc0t:"Rentory",
+  pc0d:"الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد.",
+  pc0r:"0 طلبات عملاء ضاعت منذ الإطلاق",
+  pc1k:"مستندات محاسبية · بالعربية",
+  pc1t:"الفواتير والسندات",
+  pc1d:"فواتير وسندات عربية تُطبع مباشرة من Odoo.",
+  pc1r:"ساعة ← دقيقتان لكل مستند",
+  pc2k:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
+  pc2t:"حارس الدوام",
+  pc2d:"تسجيل حضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي.",
+  pc2r:"حلّ محل مجموعة واتساب للدوام",
+  pc3k:"إضافة لتطبيق التأجير في Odoo · مبيعات",
+  pc3t:"خصومات العملاء",
+  pc3d:"اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب.",
+  pc3r:"لا خصومات منسية أو خاطئة بعد اليوم",
+  pc4k:"تقارير Odoo · بيانات التأجير",
+  pc4t:"تحليلات الإيرادات",
+  pc4d:"تقارير الإيرادات والأكثر تأجيراً بنقرة واحدة.",
+  pc4r:"تقارير المستثمرين دون جداول Excel",
+  pc5k:"ترحيل · Odoo.sh",
+  pc5t:"الترقية من Odoo 17 إلى 19",
+  pc5d:"قاعدة بيانات شركة حية نُقلت إصدارين للأمام.",
+  pc5r:"اختُبرت على نسخة تجريبية قبل الإطلاق",
+  /* project-cards:end */
   acct_h:"الجانب المحاسبي",
   acct_p:"لا أكتب الكود فقط، بل أمسك الدفاتر التي يغذّيها، وهذا يعني اجتماعات أقل لشرح ما هو قيد اليومية.",
   acct_list:"<li>قيود اليومية والإيرادات والمصاريف ودفعات العملاء، مؤتمتة حيث أمكن</li><li>تحليل شهري للإيرادات ورأس المال للإدارة والمستثمرين</li><li>سجلات الأصول الثابتة مرتبطة بمخزون التأجير</li><li>أكثر من 70 مراجعة لأسعار المعدات شهرياً للعملاء والمستثمرين</li><li>تقارير المستثمرين والأرصدة الداخلية</li><li>أسعار المعدات وبياناتها على sokoonrental.com عبر cPanel وSQLite</li>",
@@ -366,6 +356,6 @@ window.AR = {
   foot:"© 2026 محمد قصي الحافظ"
 };
 </script>
-<script src="i18n.js?v=4"></script>
+<script src="i18n.js?v=6"></script>
 </body>
 </html>
