@@ -178,13 +178,11 @@ html[dir="rtl"] .result:hover{transform:translateX(-4px)}
 .ba-mini i{font-style:normal;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:.15rem;opacity:.7}
 html[lang="ar"] .ba-mini i{letter-spacing:0}
 
-.acct{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--line)}
 .ticks{list-style:none;margin:0;padding:0}
 .ticks li{padding:.5rem 0;padding-inline-start:1.6rem;position:relative;border-bottom:1px solid var(--line);transition:padding .25s var(--ease)}
 .ticks li::before{content:"";position:absolute;inset-inline-start:.2rem;top:1.05rem;width:.55rem;height:.55rem;background:linear-gradient(135deg,#fff,#7a7a7a);border-radius:1px;transition:transform .3s var(--ease)}
 .ticks li:hover{padding-inline-start:1.9rem}
 .ticks li:hover::before{transform:rotate(45deg) scale(1.2)}
-@media (max-width:760px){.acct{grid-template-columns:1fr}}
 
 /* services */
 .svc h3{display:flex;gap:.6rem;align-items:baseline}
