@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -85,6 +85,10 @@
       <div class="client">
         <div>
           <p class="sub" style="margin-bottom:0" data-i18n="work_p">A camera and media equipment rental house in Damascus, part of Sokoon Holding. Since September 2025 I've run their Odoo 19 Enterprise system, and written their custom modules. I also have 1 year of experience in accounting, so invoices, vouchers and reports come out the way the finance team expects. Everything below is live and used every day.</p>
+          <div class="co-links">
+            <a class="chip-link" href="https://sokoonrental.com" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9S9.4 5.5 12 3z"/></svg><span>sokoonrental.com</span><i>↗</i></a>
+            <a class="chip-link" href="https://www.instagram.com/sokoon.rh/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg><span>@sokoon.rh</span><i>↗</i></a>
+          </div>
         </div>
         <div class="minis">
           <div><b>120+</b><span data-i18n="m2">invoices a month</span></div>
@@ -159,6 +163,31 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section id="words" class="words">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="tm_eye">In their words</p>
+      <figure class="tm">
+        <span class="tm-mark" aria-hidden="true">”</span>
+        <blockquote class="tm-quote" lang="ar" dir="rtl">
+          <p class="tm-l1">لاحظنا تحول كبير في نظام عمل الشركة الداخلي بعد تعاملنا مع قصي</p>
+          <p class="tm-l2">احترافية و مهنيّة تستحق الإشادة</p>
+        </blockquote>
+        <p class="tm-tr"><span data-i18n="tm_tr">“We noticed a big change in how the company runs internally after working with Kosai. Professional, skilled work that deserves praise.”</span> <small data-i18n="tm_trn">Translated from Arabic</small></p>
+        <figcaption class="tm-by">
+          <span class="tm-avatar" aria-hidden="true" data-i18n="tm_ini">MA</span>
+          <span class="tm-who">
+            <b data-i18n="tm_name">Mohammad Alghazali Alrifai</b>
+            <span data-i18n="tm_role">Manager, Sokoon Rental House</span>
+          </span>
+          <span class="tm-links">
+            <a class="chip-link" href="https://sokoonrental.com" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9S9.4 5.5 12 3z"/></svg><span>sokoonrental.com</span><i>↗</i></a>
+            <a class="chip-link" href="https://www.instagram.com/sokoon.rh/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg><span>Instagram</span><i>↗</i></a>
+          </span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -241,6 +270,7 @@
         </div>
         <div class="links">
           <a href="https://github.com/BlaseDoesIt">GitHub</a>
+          <a class="ig-link" href="https://www.instagram.com/kosaialhafez/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg><span>Instagram</span></a>
         </div>
       </div>
     </div>
@@ -306,6 +336,11 @@ window.AR = {
   sw5d:"قاعدة بيانات شركة حية نُقلت إصدارين للأمام.",
   sw5r:"اختُبرت على نسخة تجريبية قبل الإطلاق",
   /* project-cards:end */
+  tm_eye:"بكلماتهم",
+  tm_tr:"", tm_trn:"",
+  tm_ini:"مر",
+  tm_name:"محمد الغزالي الرفاعي",
+  tm_role:"مدير، سكون لتأجير المعدات",
   svc_h:"ما يمكنني بناؤه لك",
   svc_sub:"ابدأ بمهمة واحدة مزعجة، أو استبدل عملية يدوية كاملة.",
   sv1h:"وحدات Odoo مخصصة", sv1p:"تطبيقات جديدة أو تعديلات على ما تستخدمه: المبيعات، المخزون، التأجير، المشتريات، الموارد البشرية، الموقع. بلغة Python وOWL/JavaScript وتقارير QWeb.",
@@ -345,6 +380,6 @@ window.AR = {
   foot:"© 2026 محمد قصي الحافظ"
 };
 </script>
-<script src="i18n.js?v=12"></script>
+<script src="i18n.js?v=13"></script>
 </body>
 </html>

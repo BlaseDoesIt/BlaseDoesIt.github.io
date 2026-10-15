@@ -426,3 +426,49 @@ html .flow.in.done .node.res:hover{box-shadow:0 14px 34px rgba(255,255,255,.12)}
 /* numbers like "10 → 1-2" or "800+" always read left to right, even on the Arabic page */
 .stat b,.minis b{direction:ltr;unicode-bidi:isolate}
 html[dir="rtl"] .stat b,html[dir="rtl"] .minis b{text-align:right}
+
+/* links to the company and socials */
+.ico{width:1.05em;height:1.05em;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ico .dot{fill:currentColor;stroke:none}
+.co-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.chip-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;color:var(--ink);text-decoration:none;
+  padding:.4rem .8rem;border:1px solid var(--line);border-radius:99px;background:var(--surface);
+  transition:border-color .25s,background-color .25s,transform .25s var(--ease)}
+.chip-link i{font-style:normal;color:var(--muted);transition:transform .25s var(--ease),color .25s}
+.chip-link:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.chip-link:hover i{color:var(--ink);transform:translate(2px,-2px)}
+html[dir="rtl"] .chip-link:hover i{transform:translate(-2px,-2px)}
+.ig-link{display:inline-flex;align-items:center;gap:.4rem}
+
+/* testimonial */
+.words{padding-top:3.5rem}
+.tm{position:relative;margin:0;padding:clamp(1.8rem,5vw,3.5rem);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  background:var(--grad-dark);background-size:200% 200%;background-position:0% 0%;transition:background-position 1.2s var(--ease),border-color .4s}
+.tm:hover{background-position:100% 100%;border-color:rgba(255,255,255,.35)}
+.tm::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 80% at 100% 0%,rgba(255,255,255,.09),transparent 60%)}
+html[dir="rtl"] .tm::before{background:radial-gradient(60% 80% at 0% 0%,rgba(255,255,255,.09),transparent 60%)}
+.tm-mark{position:absolute;top:-.12em;left:.08em;font:700 clamp(9rem,22vw,15rem)/1 var(--helv);pointer-events:none;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.22}
+.tm-quote{position:relative;margin:0;font-family:"Noto Kufi Arabic",Tahoma,sans-serif;text-align:right}
+.tm-quote p{margin:0;text-align:right}
+.tm-l1{font-weight:600;font-size:clamp(1.2rem,2.6vw,1.75rem);line-height:1.9;color:var(--ink);max-width:34ch;margin-inline-start:auto}
+.tm-l2{margin-top:.6rem!important;font-weight:800;font-size:clamp(1.6rem,4vw,2.7rem);line-height:1.6;display:inline-block;float:right;
+  background:var(--grad-text);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  transition:background-position .9s var(--ease)}
+.tm:hover .tm-l2{background-position:100% 0}
+.tm-quote::after{content:"";display:block;clear:both}
+.tm-tr{position:relative;margin:1.6rem 0 0;color:var(--muted);max-width:60ch;font-size:1.02rem;text-align:start}
+.tm-tr small{display:block;margin-top:.35rem;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6f6f6f}
+html[lang="ar"] .tm-tr{display:none}
+.tm-by{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.2rem;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.tm-avatar{width:3.1rem;height:3.1rem;border-radius:50%;display:grid;place-items:center;flex:none;
+  font:700 1rem/1 var(--head);letter-spacing:.02em;color:#000;background:var(--grad-light);background-size:160% 160%;
+  box-shadow:0 0 0 1px rgba(255,255,255,.25),0 8px 22px rgba(0,0,0,.5);transition:background-position .7s var(--ease)}
+.tm:hover .tm-avatar{background-position:100% 100%}
+.tm-who{display:flex;flex-direction:column;line-height:1.35}
+.tm-who b{font-size:1.05rem}
+.tm-who span{color:var(--muted);font-size:.9rem}
+.tm-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-inline-start:auto}
+@media (max-width:620px){.tm-links{margin-inline-start:0;width:100%}}
+@media (max-width:620px){.tm-mark{font-size:7.5rem}.tm-quote{padding-top:3.4rem}}
