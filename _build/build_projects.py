@@ -56,7 +56,7 @@ PROJECTS = [
   },
   {
     "slug": "invoices",
-    "repo": "https://github.com/Master7Pineapple/odoo-arabic-invoices-vouchers",
+    "repo": "https://github.com/BlaseDoesIt/odoo-arabic-invoices-vouchers",
     "kind": ("Business documents · Arabic", "مستندات أعمال · بالعربية"),
     "title": ("Invoices and vouchers", "الفواتير والسندات"),
     "summary": ("Arabic invoices and receipt or payment vouchers that print straight from Odoo, in the company's own design.",
@@ -89,7 +89,7 @@ PROJECTS = [
   },
   {
     "slug": "shift-guard",
-    "repo": "https://github.com/Master7Pineapple/odoo-attendance-shift-guard",
+    "repo": "https://github.com/BlaseDoesIt/odoo-attendance-shift-guard",
     "kind": ("Odoo Attendances add-on · HR", "إضافة لتطبيق الحضور في Odoo · موارد بشرية"),
     "title": ("Attendance Shift Guard", "حارس الدوام"),
     "summary": ("GPS-verified attendance with personal shifts, reminders and overtime approval, built on top of Odoo Attendances.",
@@ -121,7 +121,7 @@ PROJECTS = [
   },
   {
     "slug": "discounts",
-    "repo": "https://github.com/Master7Pineapple/odoo-rental-customer-discount",
+    "repo": "https://github.com/BlaseDoesIt/odoo-rental-customer-discount",
     "small": True,  # shown in "Smaller work" on the home page, no own page
     "kind": ("Odoo Rental add-on · sales", "إضافة لتطبيق التأجير في Odoo · مبيعات"),
     "title": ("Customer discounts", "خصومات العملاء"),
@@ -148,7 +148,7 @@ PROJECTS = [
   },
   {
     "slug": "analytics",
-    "repo": "https://github.com/Master7Pineapple/odoo-rental-revenue-analytics",
+    "repo": "https://github.com/BlaseDoesIt/odoo-rental-revenue-analytics",
     "kind": ("Odoo reporting · rental data", "تقارير Odoo · بيانات التأجير"),
     "title": ("Revenue analytics", "تحليلات الإيرادات"),
     "summary": ("Revenue and most-rented reports by month, year, category, customer and serial, inside Odoo.",
