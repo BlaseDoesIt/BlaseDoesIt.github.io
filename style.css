@@ -125,6 +125,11 @@ p{max-width:68ch}
 .pain .card::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;background:linear-gradient(180deg,#fff,#6b6b6b);transition:width .3s var(--ease)}
 .pain .card:hover::before{width:7px}
 .pain .card p{color:var(--ink);margin:0}
+.pain .card p.was{color:var(--muted)}
+.pain .card p.now{margin-top:.6rem;font-weight:700;text-align:start}
+.pain .card p.now i{font-style:normal;display:inline-block}
+html[dir="rtl"] .pain .card p.now i{transform:scaleX(-1)}
+.minis div:last-child:nth-child(odd){grid-column:1/-1}
 
 /* case study */
 .client{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:start;margin-bottom:2.5rem}

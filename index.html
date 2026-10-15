@@ -7,7 +7,7 @@
 <meta name="description" content="Custom Odoo modules and business apps for phone and desktop, built by a developer who runs a company's Odoo system every day.">
 <meta property="og:title" content="Kosai Alhafez | Business systems developer">
 <meta property="og:description" content="I automate the manual work in your business: custom Odoo modules and apps for phone and desktop.">
-<meta property="og:image" content="https://blasedoesit.com/img/og.jpg">
+<meta property="og:image" content="https://blasedoesit.com/img/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -57,9 +57,10 @@
       </figure>
     </div>
 
-    <div class="stats n2">
-      <div class="stat"><b>50</b><span data-i18n="s2t">employees working on the system</span></div>
-      <div class="stat"><b>800+</b><span data-i18n="s3t">equipment items tracked by serial</span></div>
+    <div class="stats n3">
+      <div class="stat"><b>80+</b><span data-i18n="s1t">rental orders a month</span></div>
+      <div class="stat"><b>1 h → 2 min</b><span data-i18n="s2t">per invoice, now generated from the order</span></div>
+      <div class="stat"><b>50</b><span data-i18n="s3t">employees clock in through Shift Guard</span></div>
     </div>
   </div>
 
@@ -68,12 +69,12 @@
       <h2 data-i18n="pain_h">Problems I've already solved</h2>
       <p class="sub" data-i18n="pain_sub">Each of these was a real problem at the company I work for. Each one is now handled by the system I built.</p>
       <div class="cards pain">
-        <div class="card"><p data-i18n="pain1">Attendance is tracked in a WhatsApp group, and someone copies the times out by hand.</p></div>
-        <div class="card"><p data-i18n="pain2">Invoices and receipts are put together in Word or Excel, one at a time.</p></div>
-        <div class="card"><p data-i18n="pain3">Nobody knows exactly where each item is, who has it, or when it comes back.</p></div>
-        <div class="card"><p data-i18n="pain4">Customer requests get lost between chats, calls and notebooks.</p></div>
-        <div class="card"><p data-i18n="pain5">Revenue reports for owners and investors take days to prepare.</p></div>
-        <div class="card"><p data-i18n="pain6">Odoo is installed, but your team works around it because it doesn't fit how you work.</p></div>
+        <div class="card"><p class="was" data-i18n="pain1">Attendance is tracked in a WhatsApp group, and someone copies the times out by hand.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain1a">GPS check-in in Odoo, with reminders and overtime approval</span></p></div>
+        <div class="card"><p class="was" data-i18n="pain2">Invoices and receipts are put together in Word or Excel, one at a time.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain2a">Printed from the order in 2 minutes, amount in Arabic words included</span></p></div>
+        <div class="card"><p class="was" data-i18n="pain3">Nobody knows exactly where each item is, who has it, or when it comes back.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain3a">Every serial shows its status, location and return date</span></p></div>
+        <div class="card"><p class="was" data-i18n="pain4">Customer requests get lost between chats, calls and notebooks.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain4a">Every request becomes an order in Rentory, none lost since launch</span></p></div>
+        <div class="card"><p class="was" data-i18n="pain5">Revenue reports for owners and investors take days to prepare.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain5a">Live revenue reports in Odoo, one click away</span></p></div>
+        <div class="card"><p class="was" data-i18n="pain6">Odoo is installed, but your team works around it because it doesn't fit how you work.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain6a">Custom modules built around how the team already works</span></p></div>
       </div>
     </div>
   </section>
@@ -86,12 +87,11 @@
           <p class="sub" style="margin-bottom:0" data-i18n="work_p">A camera and media equipment rental house in Damascus, part of Sokoon Holding. Since September 2025 I've run their Odoo 19 Enterprise system, and written their custom modules. I also have 1 year of experience in accounting, so invoices, vouchers and reports come out the way the finance team expects. Everything below is live and used every day.</p>
         </div>
         <div class="minis">
-          <div><b>80+</b><span data-i18n="m1">rental orders a month</span></div>
           <div><b>120+</b><span data-i18n="m2">invoices a month</span></div>
           <div><b>70+</b><span data-i18n="m3">active customers</span></div>
           <div><b>420+</b><span data-i18n="m4">equipment groups</span></div>
           <div><b>800+</b><span data-i18n="m5">items tracked by serial</span></div>
-          <div><b>8</b><span data-i18n="m6">office users every day</span></div>
+          <div><b>8</b><span data-i18n="m6">office staff run orders and invoices in Odoo daily</span></div>
         </div>
       </div>
 
@@ -115,7 +115,7 @@
           <div class="pbody">
             <span class="kind" data-i18n="pc1k">Business documents · Arabic</span>
             <h3 data-i18n="pc1t">Invoices and vouchers</h3>
-            <p data-i18n="pc1d">Arabic invoices and vouchers printed straight from Odoo.</p>
+            <p data-i18n="pc1d">Generated from the order with the amount in Arabic words. No formatting or retyping by hand.</p>
             <span class="pres" data-i18n="pc1r">1 hour → 2 minutes per document</span>
           </div>
         </a>
@@ -222,7 +222,7 @@
       <details><summary data-i18n="q1">Which Odoo versions do you work with?</summary><p data-i18n="a1">Mainly Odoo 17, 18 and 19, Community or Enterprise, on Odoo.sh or your own server. I've upgraded a live company from 17 to 19.</p></details>
       <details><summary data-i18n="q2">We don't use Odoo. Can you still help?</summary><p data-i18n="a2">Yes. I can build a standalone app for phone and desktop, or help you decide whether Odoo is a good fit before you spend money on it.</p></details>
       <details><summary data-i18n="q3">Who owns the code?</summary><p data-i18n="a3">You do. You get the full source code, installed on your system or your GitHub.</p></details>
-      <details><summary data-i18n="q4">When are you available?</summary><p data-i18n="a4">I work on client projects every day from 6 PM Damascus time (7 PM in Dubai, 6 PM in Riyadh).</p></details>
+      <details><summary data-i18n="q4">When are you available?</summary><p data-i18n="a4">Send me the problem during your workday. I work on it that evening, and you see progress the next morning. I'm available for calls from 6 PM to midnight Damascus time (7 PM to 1 AM in Dubai, the same as Riyadh).</p></details>
       <details><summary data-i18n="q5">How do we pay?</summary><p data-i18n="a5">By international bank transfer, in stages. Tell me what works for you and we'll sort it out on the call.</p></details>
       <details><summary data-i18n="q6">Do you speak Arabic?</summary><p data-i18n="a6">Arabic is my native language and I work in English every day. Documents, apps and training can be in either or both.</p></details>
     </div>
@@ -264,19 +264,19 @@ window.AR = {
   cta_call:"احجز مكالمة مجانية 15 دقيقة", cta_work:"شاهد ما بنيته",
   avail:"متاح للعملاء في الخليج وحول العالم، بالعربية والإنجليزية.",
   cap_name:"قصي الحافظ", cap_role:"مطوّر أنظمة أعمال، سكون لتأجير المعدات",
-  s2t:"موظفاً يعملون على النظام",
-  s3t:"قطعة معدات مُتتبَّعة بالرقم التسلسلي",
+  s1t:"طلب تأجير شهرياً", s2t:"لكل فاتورة، تُنشأ الآن من الطلب",
+  s3t:"موظفاً يسجّلون حضورهم عبر حارس الدوام",
   pain_h:"مشاكل حللتها بالفعل",
   pain_sub:"كل واحدة من هذه كانت مشكلة حقيقية في الشركة التي أعمل بها، وكلها اليوم يتولاها النظام الذي بنيته.",
-  pain1:"الدوام يُسجَّل في مجموعة واتساب، وأحدهم ينسخ الأوقات يدوياً.",
-  pain2:"الفواتير والإيصالات تُجهَّز على Word أو Excel، واحدة تلو الأخرى.",
-  pain3:"لا أحد يعرف بالضبط أين كل قطعة، ومع من، ومتى تعود.",
-  pain4:"طلبات العملاء تضيع بين المحادثات والمكالمات والدفاتر.",
-  pain5:"تقارير الإيرادات للمالكين والمستثمرين تأخذ أياماً لتجهيزها.",
-  pain6:"Odoo مُثبَّت، لكن فريقك يتحايل عليه لأنه لا يناسب طريقة عملكم.",
+  pain1:"الدوام يُسجَّل في مجموعة واتساب، وأحدهم ينسخ الأوقات يدوياً.", pain1a:"تسجيل حضور بـ GPS في Odoo، مع تذكيرات وموافقة على الإضافي",
+  pain2:"الفواتير والإيصالات تُجهَّز على Word أو Excel، واحدة تلو الأخرى.", pain2a:"تُطبع من الطلب خلال دقيقتين، مع المبلغ بالحروف العربية",
+  pain3:"لا أحد يعرف بالضبط أين كل قطعة، ومع من، ومتى تعود.", pain3a:"كل رقم تسلسلي يُظهر حالته وموقعه وموعد عودته",
+  pain4:"طلبات العملاء تضيع بين المحادثات والمكالمات والدفاتر.", pain4a:"كل طلب يصبح طلباً في Rentory، ولم يضع أي طلب منذ الإطلاق",
+  pain5:"تقارير الإيرادات للمالكين والمستثمرين تأخذ أياماً لتجهيزها.", pain5a:"تقارير إيرادات حيّة في Odoo بنقرة واحدة",
+  pain6:"Odoo مُثبَّت، لكن فريقك يتحايل عليه لأنه لا يناسب طريقة عملكم.", pain6a:"وحدات مخصصة مبنية حول طريقة عمل الفريق",
   work_h:"أين أعمل: سكون لتأجير المعدات",
   work_p:"شركة لتأجير الكاميرات والمعدات الإعلامية في دمشق، تابعة لسكون القابضة. منذ أيلول 2025 أدير نظام Odoo 19 Enterprise لديهم وأكتب وحداتهم المخصصة. ولدي سنة خبرة في المحاسبة، لذلك تخرج الفواتير والسندات والتقارير كما يتوقعها الفريق المالي. كل ما يلي يعمل فعلياً ويُستخدم يومياً.",
-  m1:"طلب تأجير شهرياً", m2:"فاتورة شهرياً", m3:"عميلاً نشطاً", m4:"مجموعة معدات", m5:"قطعة مُتتبَّعة بالرقم التسلسلي", m6:"مستخدمين في المكتب يومياً",
+  m2:"فاتورة شهرياً", m3:"عميلاً نشطاً", m4:"مجموعة معدات", m5:"قطعة مُتتبَّعة بالرقم التسلسلي", m6:"موظفين في المكتب يديرون الطلبات والفواتير في Odoo يومياً",
   pg_h:"ما بنيته هناك",
   /* project-cards:start */
   sw_h:"أعمال أصغر",
@@ -288,7 +288,7 @@ window.AR = {
   lic_closed_src:"مغلق المصدر",
   pc1k:"مستندات أعمال · بالعربية",
   pc1t:"الفواتير والسندات",
-  pc1d:"فواتير وسندات عربية تُطبع مباشرة من Odoo.",
+  pc1d:"تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية.",
   pc1r:"ساعة ← دقيقتان لكل مستند",
   lic_open_src:"مفتوح المصدر",
   pc2k:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
@@ -337,7 +337,7 @@ window.AR = {
   q1:"مع أي إصدارات Odoo تعمل؟", a1:"أساساً Odoo 17 و18 و19، نسخة Community أو Enterprise، على Odoo.sh أو على خادمك. وقد رقّيت شركة قائمة من الإصدار 17 إلى 19.",
   q2:"لا نستخدم Odoo. هل يمكنك المساعدة؟", a2:"نعم. أستطيع بناء تطبيق مستقل للهاتف وسطح المكتب، أو مساعدتك في تقرير ما إذا كان Odoo مناسباً قبل أن تنفق عليه.",
   q3:"لمن يعود الكود؟", a3:"لك. تحصل على الكود المصدري كاملاً، مثبتاً على نظامك أو على GitHub الخاص بك.",
-  q4:"متى تكون متاحاً؟", a4:"أعمل على مشاريع العملاء يومياً من الساعة 6 مساءً بتوقيت دمشق (7 مساءً في دبي، 6 مساءً في الرياض).",
+  q4:"متى تكون متاحاً؟", a4:"أرسل لي المشكلة خلال يوم عملك، فأعمل عليها مساءً وترى التقدم صباح اليوم التالي. متاح للمكالمات من 6 مساءً حتى منتصف الليل بتوقيت دمشق (7 مساءً حتى 1 فجراً في دبي، ونفس التوقيت في الرياض).",
   q5:"كيف ندفع؟", a5:"بتحويل بنكي دولي، على مراحل. أخبرني بما يناسبك ونرتّب الأمر في المكالمة.",
   q6:"هل تتحدث العربية؟", a6:"العربية لغتي الأم، وأعمل بالإنجليزية يومياً. المستندات والتطبيقات والتدريب بأي منهما أو بكليهما.",
   con_h:"أخبرني ما الذي يُبطئ عملك.",
@@ -346,6 +346,6 @@ window.AR = {
   foot:"© 2026 محمد قصي الحافظ"
 };
 </script>
-<script src="i18n.js?v=11"></script>
+<script src="i18n.js?v=12"></script>
 </body>
 </html>

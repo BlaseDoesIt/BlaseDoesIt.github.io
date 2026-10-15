@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "11"  # bump to bust browser caches of style.css / i18n.js
+V = "12"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -61,10 +61,10 @@ PROJECTS = [
     "title": ("Invoices and vouchers", "الفواتير والسندات"),
     "summary": ("Arabic invoices and receipt or payment vouchers that print straight from Odoo, in the company's own design.",
                 "فواتير عربية وسندات قبض ودفع تُطبع مباشرة من Odoo بتصميم الشركة."),
-    "card": ("Arabic invoices and vouchers printed straight from Odoo.", "فواتير وسندات عربية تُطبع مباشرة من Odoo."),
+    "card": ("Generated from the order with the amount in Arabic words. No formatting or retyping by hand.", "تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية."),
     "card_result": ("1 hour → 2 minutes per document", "ساعة ← دقيقتان لكل مستند"),
     "thumb": "voucher.webp",
-    "stats": [("1 h → 2 min", ("per invoice or voucher", "لكل فاتورة أو سند")),
+    "stats": [("1 h → 2 min", ("per invoice or voucher, generated from the order instead of formatted and retyped by hand", "لكل فاتورة أو سند، تُنشأ من الطلب بدلاً من تنسيقها وإعادة كتابتها يدوياً")),
               ("120+", ("invoices a month", "فاتورة شهرياً")),
               ("A5", ("matches the existing stationery", "يطابق القرطاسية الحالية"))],
     "before": [("Open a Word or Excel template", "فتح قالب Word أو Excel"),
@@ -280,7 +280,7 @@ def build(proj, nxt):
 <meta name="description" content="{e(proj["summary"][0])}">
 <meta property="og:title" content="{e(title_en)} | Kosai Alhafez">
 <meta property="og:description" content="{e(proj["summary"][0])}">
-<meta property="og:image" content="https://blasedoesit.com/img/og.jpg">
+<meta property="og:image" content="https://blasedoesit.com/img/og.jpg?v=2">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../favicon.png" type="image/png" sizes="64x64">
 <link rel="preconnect" href="https://fonts.googleapis.com">
