@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "16"  # bump to bust browser caches of style.css / i18n.js
+V = "17"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
