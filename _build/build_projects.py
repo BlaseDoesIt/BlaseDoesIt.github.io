@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "15"  # bump to bust browser caches of style.css / i18n.js
+V = "16"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -61,7 +61,7 @@ PROJECTS = [
                 "تطبيق لإدارة التأجير والأصول مبني داخل Odoo 19 لشركة تأجير كاميرات ومعدات إعلامية."),
     "card": ("Orders, equipment, contracts, deposits and late fees in one app.",
              "الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد."),
-    "card_result": ("0 customer requests lost since launch", "0 طلبات عملاء ضاعت منذ الإطلاق"),
+    "card_result": ("No customer request lost since launch", "لم يضع أي طلب عميل منذ الإطلاق"),
     "thumb": "rentory-order.webp",
     "launched": ("Launched on 1 August 2026", "أُطلق في 1 أغسطس 2026"),
     "stats": [(("None", "ولا طلب"), ("customer requests lost since launch", "ضاع من طلبات العملاء منذ الإطلاق")),
@@ -105,7 +105,7 @@ PROJECTS = [
     "summary": ("Arabic invoices and receipt or payment vouchers that print straight from Odoo, in the company's own design.",
                 "فواتير عربية وسندات قبض ودفع تُطبع مباشرة من Odoo بتصميم الشركة."),
     "card": ("Generated from the order with the amount in Arabic words. No formatting or retyping by hand.", "تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية."),
-    "card_result": ("1 hour → 2 minutes per document", "ساعة ← دقيقتان لكل مستند"),
+    "card_result": ("Minutes instead of an hour per document", "دقائق بدل ساعة لكل مستند"),
     "thumb": "voucher.webp",
     "stats": [(("Minutes, not hours", "دقائق لا ساعات"), ("per invoice or voucher, generated from the order instead of formatted and retyped by hand", "لكل فاتورة أو سند، تُنشأ من الطلب بدلاً من تنسيقها وإعادة كتابتها يدوياً")),
               ("120+", ("invoices a month", "فاتورة شهرياً")),

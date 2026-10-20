@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Kosai Alhafez</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=16">
+<style>
+.nf{min-height:calc(100vh - 3.6rem - 6rem);display:flex;flex-direction:column;justify-content:center;padding-block:4rem}
+.nf .code{font:700 clamp(5rem,18vw,11rem)/1 var(--helv);letter-spacing:-.05em;margin:0;
+  background:var(--grad-text);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.nf h1{margin:1rem 0 .6rem}
+.nf .ctas{margin-top:1.8rem}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" data-i18n="brand">Kosai Alhafez</a>
+    <button class="lang" id="langBtn" type="button">العربية</button>
+    <a class="btn solid" href="https://cal.com/kosai/15min" target="_blank" rel="noopener" data-i18n="cta">Book a call</a>
+  </div>
+</header>
+
+<main class="wrap nf">
+  <p class="code" aria-hidden="true">404</p>
+  <h1 class="page-h1" data-i18n="h">This page doesn't exist.</h1>
+  <p class="sub" data-i18n="p">The link may be old or mistyped. Everything I've built is on the home page.</p>
+  <div class="ctas">
+    <a class="btn solid" href="/" data-i18n="home">Go to the home page</a>
+    <a class="btn" href="/#work" data-i18n="work">See the projects</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><span data-i18n="foot">© 2026 MHD Kosai Alhafez</span><span>Damascus · UTC+3</span></div>
+</footer>
+
+<script>
+window.TITLES = {en:"Page not found | Kosai Alhafez", ar:"الصفحة غير موجودة | قصي الحافظ"};
+window.AR = {
+  brand:"قصي الحافظ", cta:"احجز مكالمة",
+  h:"هذه الصفحة غير موجودة.",
+  p:"قد يكون الرابط قديماً أو مكتوباً بشكل خاطئ. كل ما بنيته موجود في الصفحة الرئيسية.",
+  home:"إلى الصفحة الرئيسية", work:"شاهد المشاريع",
+  foot:"© 2026 محمد قصي الحافظ"
+};
+</script>
+<script src="/i18n.js?v=16"></script>
+</body>
+</html>
