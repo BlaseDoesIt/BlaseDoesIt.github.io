@@ -6,9 +6,52 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "13"  # bump to bust browser caches of style.css / i18n.js
+V = "14"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
+  {
+    "slug": "rentory-app",
+    "repo": "https://github.com/BlaseDoesIt/rentory-app",
+    "wide": True,  # featured card across the top of the home grid
+    "gallery": "app",  # desktop shot on top, phone shots below
+    "kind": ("Flutter app · phone and desktop", "تطبيق Flutter · الهاتف وسطح المكتب"),
+    "title": ("Rentory app", "تطبيق Rentory"),
+    "summary": ("A rental management app for phone and desktop. It runs standalone on its own backend, or connects to Odoo 19 when a company already uses it.",
+                "تطبيق لإدارة التأجير على الهاتف وسطح المكتب. يعمل مستقلاً على خادمه الخاص، أو يتصل بـ Odoo 19 إن كانت الشركة تستخدمه."),
+    "card": ("Orders, pickups, returns and late fees on any phone or computer. Works with or without Odoo.",
+             "الطلبات والتسليم والإرجاع وغرامات التأخير على أي هاتف أو كمبيوتر. يعمل مع Odoo أو بدونه."),
+    "card_result": ("Android, iPhone, Windows and Mac from one codebase", "Android وiPhone وWindows وMac من كود واحد"),
+    "thumb": "rentory-app-desktop.webp",
+    "stats": [("4", ("platforms from one codebase", "منصات من كود واحد")),
+              ("2", ("backends: standalone or Odoo 19", "خادمان: مستقل أو Odoo 19")),
+              ("125", ("automated tests", "اختباراً آلياً")),
+              ("EN + AR", ("right to left included", "مع دعم الكتابة من اليمين لليسار"))],
+    "before": [("Orders kept in a spreadsheet or a notebook", "الطلبات في جدول بيانات أو دفتر"),
+               ("Availability checked by asking around", "التوفر يُعرف بالسؤال"),
+               ("Pickup checklist on paper at the warehouse", "قائمة التسليم على الورق في المستودع"),
+               ("Late days counted by hand", "أيام التأخير تُحسب يدوياً")],
+    "pain": ("Small rental shops can't justify a full ERP, and Odoo screens aren't made for the warehouse floor.",
+             "محلات التأجير الصغيرة لا تحتاج نظام ERP كاملاً، وشاشات Odoo لم تُصمَّم لأرض المستودع."),
+    "after": [("Order created on a phone or a desktop", "الطلب يُنشأ على الهاتف أو سطح المكتب"),
+              ("Units offered only when they're free", "القطع تُعرض فقط عندما تكون متاحة"),
+              ("Barcode scan, checklist and signature at pickup", "مسح الباركود وقائمة التحقق والتوقيع عند التسليم"),
+              ("Return checked unit by unit, late fee calculated", "الإرجاع يُفحص قطعة بقطعة، وغرامة التأخير تُحسب"),
+              ("Saved to its own server, or straight into Odoo", "يُحفظ على خادمه الخاص أو مباشرة في Odoo")],
+    "result": ("The same rental workflow runs on any device, with or without Odoo.", "نفس سير عمل التأجير يعمل على أي جهاز، مع Odoo أو بدونه."),
+    "features": [("Orders with sections, drag to reorder, and lines booked, picked up or returned one by one", "طلبات بأقسام وترتيب بالسحب، وكل بند يُحجز ويُسلَّم ويُرجع على حدة"),
+                 ("Availability per serial, confirmed by the server so no camera is booked twice", "التوفر لكل رقم تسلسلي، يؤكده الخادم فلا تُحجز كاميرا مرتين"),
+                 ("Pickup checklist, documents held and customer signature", "قائمة تحقق عند التسليم، الوثائق المحتجزة وتوقيع العميل"),
+                 ("Return condition, notes and photos for each unit", "حالة الإرجاع والملاحظات والصور لكل قطعة"),
+                 ("Late fees counted automatically, adjustable or waived", "غرامات التأخير تُحسب تلقائياً، ويمكن تعديلها أو إلغاؤها"),
+                 ("Camera scanning on phones, USB scanner on desktop", "المسح بالكاميرا على الهاتف، وبقارئ USB على سطح المكتب"),
+                 ("In Odoo mode: invoices, payments and printed documents", "في وضع Odoo: الفواتير والدفعات والمستندات المطبوعة"),
+                 ("English and Arabic, light and dark", "العربية والإنجليزية، فاتح وداكن")],
+    "tech": ["Flutter", "Dart", "Supabase", "SQLite (drift)", "Odoo JSON-2 API"],
+    "shots": [("rentory-app-desktop.webp", 1400, 880, ("Orders on desktop", "الطلبات على سطح المكتب")),
+              ("rentory-app-phone-orders.webp", 780, 1688, ("Orders on a phone", "الطلبات على الهاتف")),
+              ("rentory-app-phone-order.webp", 780, 1688, ("An order with sections", "طلب مقسّم إلى أقسام")),
+              ("rentory-app-phone-pickup.webp", 780, 1688, ("Pickup checklist", "قائمة التحقق عند التسليم"))],
+  },
   {
     "slug": "rentory",
     "closed": True,  # code stays private; tagged closed-source, no repo link
@@ -263,7 +306,7 @@ def build(proj, nxt):
   <section>
     <div class="wrap">
       {T("shots_h", tag="h2")}
-      <div class="gallery n{len(proj["shots"])}">{items}</div>
+      <div class="gallery n{len(proj["shots"])}{" " + proj["gallery"] if proj.get("gallery") else ""}">{items}</div>
     </div>
   </section>'''
     flow = f'''<div class="flow">
@@ -393,7 +436,7 @@ def cards():
             ar[k+"l"] = e(pr["launched"][1])
             launch = NL + f'            <span class="launch" data-i18n="{k}l">{e(pr["launched"][0])}</span>'
         ar[k+"k"], ar[k+"t"], ar[k+"d"], ar[k+"r"] = (e(pr["kind"][1]), e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1]))
-        out.append(f'''        <a class="pcard" href="projects/{pr["slug"]}/">
+        out.append(f'''        <a class="pcard{' wide' if pr.get('wide') else ''}" href="projects/{pr["slug"]}/">
           {lic_tag(pr, ar)}
           <div class="thumb"><img src="img/{pr["thumb"]}" alt="" loading="lazy"></div>
           <div class="pbody">

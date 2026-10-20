@@ -472,3 +472,15 @@ html[lang="ar"] .tm-tr{display:none}
 .tm-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-inline-start:auto}
 @media (max-width:620px){.tm-links{margin-inline-start:0;width:100%}}
 @media (max-width:620px){.tm-mark{font-size:7.5rem}.tm-quote{padding-top:3.4rem}}
+
+/* featured wide project card */
+.pcard.wide{grid-column:1/-1;flex-direction:row}
+.pcard.wide .thumb{flex:1.35 1 0;aspect-ratio:16/10;border-bottom:0;border-inline-end:1px solid var(--line)}
+.pcard.wide .pbody{flex:1 1 0;justify-content:center;padding:1.6rem 1.8rem;gap:.5rem}
+.pcard.wide h3{font-size:1.6rem}
+@media (max-width:760px){.pcard.wide{flex-direction:column}.pcard.wide .thumb{flex:none;width:100%;border-inline-end:0;border-bottom:1px solid var(--line)}.pcard.wide .pbody{padding:1rem 1.1rem 1.2rem}}
+
+/* app gallery: desktop on top, phones below */
+.gallery.app{grid-template-columns:repeat(3,1fr)}
+.gallery.app .shot:first-child{grid-column:1/-1}
+@media (max-width:620px){.gallery.app{grid-template-columns:repeat(2,1fr)}.gallery.app .shot:last-child{grid-column:1/-1;max-width:50%;justify-self:center}}
