@@ -484,3 +484,12 @@ html[lang="ar"] .tm-tr{display:none}
 .gallery.app{grid-template-columns:repeat(3,1fr)}
 .gallery.app .shot:first-child{grid-column:1/-1}
 @media (max-width:620px){.gallery.app{grid-template-columns:repeat(2,1fr)}.gallery.app .shot:last-child{grid-column:1/-1;max-width:50%;justify-self:center}}
+
+/* word values in stat boxes, and the hero proof line */
+.stat b.w{direction:inherit;unicode-bidi:normal;font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.2}
+.proof{margin:3rem 0 0;padding-top:1.6rem;border-top:1px solid var(--line);font-size:clamp(1.1rem,2.1vw,1.45rem);line-height:1.6;color:var(--muted);text-align:start!important;max-width:46ch}
+.proof b{font:700 1.45em/1 var(--helv);letter-spacing:-.03em;direction:ltr;unicode-bidi:isolate;
+  background:var(--grad-text);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;transition:background-position .8s var(--ease)}
+.proof:hover b{background-position:100% 0}
+.proof a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transition:text-decoration-color .2s}
+.proof a:hover{text-decoration-color:var(--muted)}

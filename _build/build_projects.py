@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "14"  # bump to bust browser caches of style.css / i18n.js
+V = "15"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -22,10 +22,10 @@ PROJECTS = [
              "الطلبات والتسليم والإرجاع وغرامات التأخير على أي هاتف أو كمبيوتر. يعمل مع Odoo أو بدونه."),
     "card_result": ("Android, iPhone, Windows and Mac from one codebase", "Android وiPhone وWindows وMac من كود واحد"),
     "thumb": "rentory-app-desktop.webp",
-    "stats": [("4", ("platforms from one codebase", "منصات من كود واحد")),
-              ("2", ("backends: standalone or Odoo 19", "خادمان: مستقل أو Odoo 19")),
-              ("125", ("automated tests", "اختباراً آلياً")),
-              ("EN + AR", ("right to left included", "مع دعم الكتابة من اليمين لليسار"))],
+    "stats": [(("Android", "Android"), ("phones and tablets", "الهواتف والأجهزة اللوحية")),
+              (("iPhone", "iPhone"), ("iOS", "iOS")),
+              (("Windows", "Windows"), ("desktop", "سطح المكتب")),
+              (("Mac", "Mac"), ("desktop", "سطح المكتب"))],
     "before": [("Orders kept in a spreadsheet or a notebook", "الطلبات في جدول بيانات أو دفتر"),
                ("Availability checked by asking around", "التوفر يُعرف بالسؤال"),
                ("Pickup checklist on paper at the warehouse", "قائمة التسليم على الورق في المستودع"),
@@ -56,7 +56,7 @@ PROJECTS = [
     "slug": "rentory",
     "closed": True,  # code stays private; tagged closed-source, no repo link
     "kind": ("Custom Odoo app · rental and assets", "تطبيق Odoo مخصص · التأجير والأصول"),
-    "title": ("Rentory", "Rentory"),
+    "title": ("Odoo Rentory", "Odoo Rentory"),
     "summary": ("A rental and asset management app built inside Odoo 19 for a camera and media equipment rental house.",
                 "تطبيق لإدارة التأجير والأصول مبني داخل Odoo 19 لشركة تأجير كاميرات ومعدات إعلامية."),
     "card": ("Orders, equipment, contracts, deposits and late fees in one app.",
@@ -64,9 +64,9 @@ PROJECTS = [
     "card_result": ("0 customer requests lost since launch", "0 طلبات عملاء ضاعت منذ الإطلاق"),
     "thumb": "rentory-order.webp",
     "launched": ("Launched on 1 August 2026", "أُطلق في 1 أغسطس 2026"),
-    "stats": [("0", ("customer requests lost since launch", "طلبات عملاء ضاعت منذ الإطلاق")),
-              ("10 → 1-2", ("order mistakes", "أخطاء في الطلبات")),
-              ("5 → 0-1", ("critical incidents per week", "حوادث حرجة أسبوعياً")),
+    "stats": [(("None", "ولا طلب"), ("customer requests lost since launch", "ضاع من طلبات العملاء منذ الإطلاق")),
+              (("Rare", "نادرة"), ("order mistakes, down from several a week", "أخطاء الطلبات، بعد أن كانت متكررة أسبوعياً")),
+              (("Almost none", "شبه معدومة"), ("critical incidents in a typical week", "الحوادث الحرجة في الأسبوع المعتاد")),
               ("800+", ("units tracked by serial", "قطعة مُتتبَّعة بالرقم التسلسلي"))],
     "before": [("Customer asks on WhatsApp or by phone", "العميل يسأل عبر واتساب أو الهاتف"),
                ("Order noted on paper or in a chat", "الطلب يُدوَّن على ورقة أو في محادثة"),
@@ -107,9 +107,9 @@ PROJECTS = [
     "card": ("Generated from the order with the amount in Arabic words. No formatting or retyping by hand.", "تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية."),
     "card_result": ("1 hour → 2 minutes per document", "ساعة ← دقيقتان لكل مستند"),
     "thumb": "voucher.webp",
-    "stats": [("1 h → 2 min", ("per invoice or voucher, generated from the order instead of formatted and retyped by hand", "لكل فاتورة أو سند، تُنشأ من الطلب بدلاً من تنسيقها وإعادة كتابتها يدوياً")),
+    "stats": [(("Minutes, not hours", "دقائق لا ساعات"), ("per invoice or voucher, generated from the order instead of formatted and retyped by hand", "لكل فاتورة أو سند، تُنشأ من الطلب بدلاً من تنسيقها وإعادة كتابتها يدوياً")),
               ("120+", ("invoices a month", "فاتورة شهرياً")),
-              ("A5", ("matches the existing stationery", "يطابق القرطاسية الحالية"))],
+              (("Print-ready", "جاهزة للطباعة"), ("on the A5 stationery already in use", "على قرطاسية A5 المستخدمة حالياً"))],
     "before": [("Open a Word or Excel template", "فتح قالب Word أو Excel"),
                ("Copy items and prices from the order", "نسخ البنود والأسعار من الطلب"),
                ("Write the amount in Arabic words by hand", "كتابة المبلغ بالحروف يدوياً"),
@@ -141,8 +141,8 @@ PROJECTS = [
     "card_result": ("Replaced a WhatsApp attendance group", "حلّ محل مجموعة واتساب للدوام"),
     "thumb": "attendance.webp",
     "stats": [("50", ("employees covered", "موظفاً مشمولاً")),
-              ("30 min", ("between reminders", "بين كل تذكير وآخر")),
-              ("0", ("hours copied from chat", "ساعات تُنسخ من المحادثات"))],
+              (("Every half hour", "كل نصف ساعة"), ("a reminder until they check in or out", "تذكير حتى يسجّل الدخول أو الخروج")),
+              (("No more", "انتهى"), ("hours copied out of a chat", "نسخ الساعات من المحادثات"))],
     "before": [("Employee posts the time in a WhatsApp group", "الموظف يكتب الوقت في مجموعة واتساب"),
                ("Someone reads through the chat", "أحدهم يقرأ المحادثة"),
                ("Hours typed up by hand", "الساعات تُفرَّغ يدوياً"),
@@ -199,8 +199,8 @@ PROJECTS = [
     "card": ("Revenue and most-rented reports, one click away.", "تقارير الإيرادات والأكثر تأجيراً بنقرة واحدة."),
     "card_result": ("Investor reports without spreadsheets", "تقارير المستثمرين دون جداول Excel"),
     "thumb": "revenue.webp",
-    "stats": [("3", ("views: chart, pivot and list", "عروض: رسم بياني، جدول محوري، قائمة")),
-              ("5", ("ways to group: product, category, customer, month, year", "طرق للتجميع: المنتج، الفئة، العميل، الشهر، السنة"))],
+    "stats": [(("Chart · Pivot · List", "رسم · محوري · قائمة"), ("switch views in one click", "التبديل بين العروض بنقرة")),
+              (("Any angle", "من كل زاوية"), ("group by product, category, customer, month or year", "التجميع حسب المنتج أو الفئة أو العميل أو الشهر أو السنة"))],
     "before": [("Export orders to Excel", "تصدير الطلبات إلى Excel"),
                ("Add up revenue per item by hand", "جمع إيراد كل قطعة يدوياً"),
                ("Build charts for the investor report", "إعداد رسوم بيانية لتقرير المستثمرين")],
@@ -291,7 +291,9 @@ def build(proj, nxt):
     for k, v in UI.items(): p.ar["u_" + k] = e(v[1])
     T = lambda k, **kw: p.t(UI[k], key="u_" + k, **kw)
     title_en, title_ar = proj["title"]
-    stats = "".join(f'<div class="stat"><b>{e(v)}</b>{p.t(l)}</div>' for v, l in proj["stats"])
+    stats = "".join(
+        f'<div class="stat">{p.t(v, tag="b", cls="w") if isinstance(v, tuple) else f"<b>{e(v)}</b>"}{p.t(l)}</div>'
+        for v, l in proj["stats"])
     feats = "".join(f'<li>{p.t(f)}</li>' for f in proj["features"])
     tech = "".join(f'<span class="chip">{e(x)}</span>' for x in proj["tech"])
     src = f'<a class="btn src" href="{proj["repo"]}" target="_blank" rel="noopener" data-i18n="u_src_btn">{e(UI["src_btn"][0])}</a>' if proj.get("repo") else ""
