@@ -497,3 +497,6 @@ html[lang="ar"] .tm-tr{display:none}
 /* short text: justified like the rest, but never split words across lines */
 .lead,.sub,.avail,.card p,.pbody p,.sw p,.proof,.tm-tr,.need p,.price p,.why p,.steps p,.proj p{-webkit-hyphens:manual;hyphens:manual}
 
+
+/* boxes and cards are too narrow for justified text (wide gaps between words): align to the start instead */
+.card p,.price p,.pbody p,.sw p,.why p,.steps p,.proj p,.need p,.mod p,.tm-tr,.ticks li,.result,.ba-mini > span,.pain .card p{text-align:start}
