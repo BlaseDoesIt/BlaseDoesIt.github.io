@@ -500,3 +500,18 @@ html[lang="ar"] .tm-tr{display:none}
 
 /* boxes and cards are too narrow for justified text (wide gaps between words): align to the start instead */
 .card p,.price p,.pbody p,.sw p,.why p,.steps p,.proj p,.need p,.mod p,.tm-tr,.ticks li,.result,.ba-mini > span,.pain .card p{text-align:start}
+
+/* pricing: description tucked behind "What's included" */
+.price details.more{margin-top:.7rem}
+.price details.more summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;color:var(--muted);
+  padding:.3rem .7rem;border:1px solid var(--line);border-radius:99px;transition:color .2s,border-color .2s,background-color .2s}
+.price details.more summary::-webkit-details-marker{display:none}
+.price details.more summary::after{content:"+";font-weight:400;font-size:1rem;line-height:1;transition:transform .3s var(--ease)}
+.price details.more[open] summary::after{content:"\2212";transform:rotate(180deg)}
+.price details.more summary:hover{color:var(--ink);border-color:rgba(255,255,255,.5)}
+.price details.more summary:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.price details.more[open] p{animation:moreIn .35s var(--ease)}
+@keyframes moreIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.price.hl:hover details.more summary{color:#2a2a2a;border-color:rgba(0,0,0,.35)}
+.prices{align-items:start}
+@media (prefers-reduced-motion:reduce){.price details.more[open] p{animation:none}}
