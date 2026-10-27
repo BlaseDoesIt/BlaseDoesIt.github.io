@@ -6,7 +6,7 @@ Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
 import html, json, os
 
-V = "20"  # bump to bust browser caches of style.css / i18n.js
+V = "21"  # bump to bust browser caches of style.css / i18n.js
 
 PROJECTS = [
   {
@@ -224,20 +224,17 @@ PROJECTS = [
     "summary": ("Moved the company's live database and custom modules from Odoo 17 to Odoo 19 Enterprise on Odoo.sh.",
                 "نقل قاعدة بيانات الشركة الحية ووحداتها المخصصة من Odoo 17 إلى Odoo 19 Enterprise على Odoo.sh."),
     "card": ("A live company database moved two versions forward.", "قاعدة بيانات شركة حية نُقلت إصدارين للأمام."),
-    "card_result": ("Tested on staging before going live", "اختُبرت على نسخة تجريبية قبل الإطلاق"),
     "thumb": None,
     "stats": [("17 → 19", ("Odoo versions", "إصدارات Odoo")),
               ("6", ("custom modules running on 19", "وحدات مخصصة تعمل على 19"))],
     "before": [("Company running on Odoo 17", "الشركة تعمل على Odoo 17"),
                ("Custom modules written for 17", "وحدات مخصصة مكتوبة للإصدار 17")],
     "pain": ("Staying on an old version means missing features and a harder upgrade later.", "البقاء على إصدار قديم يعني ميزات مفقودة وترقية أصعب لاحقاً."),
-    "after": [("Copy on an Odoo.sh staging branch", "نسخة على فرع تجريبي في Odoo.sh"),
-              ("Modules ported and tested", "نقل الوحدات واختبارها"),
+    "after": [("Modules ported and tested", "نقل الوحدات واختبارها"),
               ("Data checked against the old system", "مطابقة البيانات مع النظام القديم"),
               ("Production switched to 19", "تحويل الإنتاج إلى 19")],
     "result": ("The company runs on Odoo 19 Enterprise with all its custom modules.", "الشركة تعمل على Odoo 19 Enterprise مع كل وحداتها المخصصة."),
-    "features": [("Staging first, production only after testing", "النسخة التجريبية أولاً، والإنتاج بعد الاختبار فقط"),
-                 ("Custom modules updated to the new version", "تحديث الوحدات المخصصة للإصدار الجديد"),
+    "features": [("Custom modules updated to the new version", "تحديث الوحدات المخصصة للإصدار الجديد"),
                  ("Invoice and rental data checked after the move", "مطابقة بيانات الفواتير والتأجير بعد النقل")],
     "tech": ["Odoo.sh", "Odoo 19 Enterprise", "Python", "PostgreSQL"],
     "shots": [],
@@ -421,15 +418,18 @@ def cards():
     for i, pr in enumerate(PROJECTS):
         if pr.get("small"):
             k = f"sw{i}"
-            ar[k+"t"], ar[k+"d"], ar[k+"r"] = e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1])
+            ar[k+"t"], ar[k+"d"] = e(pr["title"][1]), e(pr["card"][1])
+            res = ""  # the result line is optional for smaller work
+            if pr.get("card_result"):
+                ar[k+"r"] = e(pr["card_result"][1])
+                res = NL + f'            <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>'
             src = ""
             if pr.get("repo"):
                 ar["sw_src"] = e(UI["src_link"][1])
                 src = NL + f'            <a class="src" href="{pr["repo"]}" target="_blank" rel="noopener" data-i18n="sw_src">{e(UI["src_link"][0])}</a>'
             small.append(f'''          <div class="sw">
             {lic_tag(pr, ar)}<h4 data-i18n="{k}t">{e(pr["title"][0])}</h4>
-            <p data-i18n="{k}d">{e(pr["card"][0])}</p>
-            <span class="pres" data-i18n="{k}r">{e(pr["card_result"][0])}</span>{src}
+            <p data-i18n="{k}d">{e(pr["card"][0])}</p>{res}{src}
           </div>''')
             continue
         k = f"pc{i}"
