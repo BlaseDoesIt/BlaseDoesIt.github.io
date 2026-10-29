@@ -18,6 +18,8 @@
   color-scheme:dark;
 }
 html[lang="ar"]{
+  /* number boxes, prices etc. use --helv; on Arabic pages their words need an Arabic font too */
+  --helv:"Heros AR","Noto Kufi Arabic",Tahoma,sans-serif;
   --head:"Noto Kufi Arabic",Tahoma,sans-serif;
   --body:"Heros AR","IBM Plex Sans Arabic",Tahoma,system-ui,sans-serif;
   --h1:clamp(2.2rem,5.6vw,4rem); --h1-lh:1.3;
@@ -458,7 +460,7 @@ html[dir="rtl"] .chip-link:hover i{transform:translate(-2px,-2px)}
 .tm::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(60% 80% at 100% 0%,rgba(255,255,255,.09),transparent 60%)}
 html[dir="rtl"] .tm::before{background:radial-gradient(60% 80% at 0% 0%,rgba(255,255,255,.09),transparent 60%)}
-.tm-mark{position:absolute;top:-.12em;left:.08em;font:700 clamp(9rem,22vw,15rem)/1 var(--helv);pointer-events:none;
+.tm-mark{position:absolute;top:.1em;left:.08em;font:700 clamp(9rem,22vw,15rem)/1 var(--helv);pointer-events:none;
   background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.22}
 .tm-quote{position:relative;margin:0;font-family:"Noto Kufi Arabic",Tahoma,sans-serif;text-align:right}
 .tm-quote p{margin:0;text-align:right}
