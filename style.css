@@ -129,6 +129,8 @@ p{max-width:68ch}
 .pain .card p.now{margin-top:.6rem;font-weight:700;text-align:start}
 .pain .card p.now i{font-style:normal;display:inline-block}
 html[dir="rtl"] .pain .card p.now i{transform:scaleX(-1)}
+.pain .card .dept{display:block;margin-bottom:.55rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+html[lang="ar"] .pain .card .dept{letter-spacing:0}
 .minis div:last-child:nth-child(odd){grid-column:1/-1}
 
 /* case study */
@@ -188,6 +190,14 @@ html[lang="ar"] .ba-mini i{letter-spacing:0}
 .ticks li::before{content:"";position:absolute;inset-inline-start:.2rem;top:1.05rem;width:.55rem;height:.55rem;background:linear-gradient(135deg,#fff,#7a7a7a);border-radius:1px;transition:transform .3s var(--ease)}
 .ticks li:hover{padding-inline-start:1.9rem}
 .ticks li:hover::before{transform:rotate(45deg) scale(1.2)}
+
+/* where else this works: what was built, then where it fits */
+.fits{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.fits li{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 2.5rem;padding:1.05rem 0;border-top:1px solid var(--line);transition:border-color .3s}
+.fits li:hover{border-top-color:#fff}
+.fits b{font-weight:700}
+.fits span{color:var(--muted)}
+@media (max-width:700px){.fits li{grid-template-columns:1fr}}
 
 /* services */
 .svc h3{display:flex;gap:.6rem;align-items:baseline}

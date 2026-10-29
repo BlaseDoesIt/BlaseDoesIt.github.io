@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
       <div>
         <p class="eyebrow" data-i18n="eyebrow">Business systems developer</p>
         <h1 data-i18n="h1">I automate the manual work in your business.</h1>
-        <p class="lead" data-i18n="lead">Custom Odoo modules and business apps for phone and desktop. I run the Odoo system at a media rental company, so I build what your team actually needs.</p>
+        <p class="lead" data-i18n="lead">Custom Odoo modules and business apps for phone and desktop. I run a company's Odoo system every day, across HR, finance, sales and operations, so I build what your team actually needs.</p>
         <div class="ctas">
           <a class="btn solid" href="https://cal.com/kosai/15min" target="_blank" rel="noopener" data-i18n="cta_call">Book a free 15 min call</a>
           <a class="btn" href="#work" data-i18n="cta_work">See what I built</a>
@@ -57,7 +57,7 @@
       </figure>
     </div>
 
-    <p class="proof" data-i18n="proof"><b>80+</b> rental orders a month and <b>50+</b> employees, all running on <a href="#work">the system I built for Sokoon</a>.</p>
+    <p class="proof" data-i18n="proof"><b>50+</b> employees and <b>80+</b> orders a month, all running on <a href="#work">the system I built for Sokoon</a>.</p>
   </div>
 
   <section id="pain">
@@ -65,12 +65,12 @@
       <h2 data-i18n="pain_h">Problems I've already solved</h2>
       <p class="sub" data-i18n="pain_sub">Each of these was a real problem at the company I work for. Each one is now handled by the system I built.</p>
       <div class="cards pain">
-        <div class="card"><p class="was" data-i18n="pain1">Attendance is tracked in a WhatsApp group, and someone copies the times out by hand.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain1a">GPS check-in in Odoo, with reminders and overtime approval</span></p></div>
-        <div class="card"><p class="was" data-i18n="pain2">Invoices and receipts are put together in Word or Excel, one at a time.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain2a">Printed from the order in 2 minutes, amount in Arabic words included</span></p></div>
-        <div class="card"><p class="was" data-i18n="pain3">Nobody knows exactly where each item is, who has it, or when it comes back.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain3a">Every serial shows its status, location and return date</span></p></div>
-        <div class="card"><p class="was" data-i18n="pain4">Customer requests get lost between chats, calls and notebooks.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain4a">Every request becomes an order in Odoo Rentory, none lost since launch</span></p></div>
-        <div class="card"><p class="was" data-i18n="pain5">Revenue reports for owners and investors take days to prepare.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain5a">Live revenue reports in Odoo, one click away</span></p></div>
-        <div class="card"><p class="was" data-i18n="pain6">Odoo is installed, but your team works around it because it doesn't fit how you work.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain6a">Custom modules built around how the team already works</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_hr">HR</span><p class="was" data-i18n="pain1">Attendance is tracked in a WhatsApp group, and someone copies the times out by hand.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain1a">GPS check-in in Odoo, with reminders and overtime approval</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_fin">Finance</span><p class="was" data-i18n="pain2">Invoices and receipts are put together in Word or Excel, one at a time.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain2a">Printed from the order in 2 minutes, amount in Arabic words included</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_ops">Operations</span><p class="was" data-i18n="pain3">Nobody knows exactly where each item is, who has it, or when it comes back.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain3a">Every serial shows its status, location and return date</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_sales">Sales</span><p class="was" data-i18n="pain4">Customer requests get lost between chats, calls and notebooks.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain4a">Every request becomes an order in Odoo Rentory, none lost since launch</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_mgmt">Management</span><p class="was" data-i18n="pain5">Revenue reports for owners and investors take days to prepare.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain5a">Live revenue reports in Odoo, one click away</span></p></div>
+        <div class="card"><span class="dept" data-i18n="d_all">Every team</span><p class="was" data-i18n="pain6">Odoo is installed, but your team works around it because it doesn't fit how you work.</p><p class="now"><i aria-hidden="true">→</i> <span data-i18n="pain6a">Custom modules built around how the team already works</span></p></div>
       </div>
     </div>
   </section>
@@ -80,17 +80,16 @@
       <h2 data-i18n="work_h">Where I work: Sokoon Rental House</h2>
       <div class="client">
         <div>
-          <p class="sub" style="margin-bottom:0" data-i18n="work_p">A camera and media equipment rental house in Damascus, part of Sokoon Holding. Since September 2025 I've run their Odoo 19 Enterprise system and written their custom modules. I also have 1 year of experience in accounting, so invoices, vouchers and reports come out the way the finance team expects. Everything below is live and used every day.</p>
+          <p class="sub" style="margin-bottom:0" data-i18n="work_p">A camera and media equipment rental house in Damascus, part of Sokoon Holding. Since September 2025 I've run their Odoo 19 Enterprise system and written their custom modules for HR, finance, sales and operations. I also have 1 year of experience in accounting, so documents and reports come out the way the finance team expects. Everything below is live and used every day.</p>
           <div class="co-links">
             <a class="chip-link" href="https://sokoonrental.com" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9S9.4 5.5 12 3z"/></svg><span>sokoonrental.com</span><i>↗</i></a>
             <a class="chip-link" href="https://www.instagram.com/sokoon.rh/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg><span>@sokoon.rh</span><i>↗</i></a>
           </div>
         </div>
         <div class="minis">
-          <div><b>120+</b><span data-i18n="m2">invoices a month</span></div>
+          <div><b>50</b><span data-i18n="m1">employees on the system</span></div>
           <div><b>70+</b><span data-i18n="m3">active customers</span></div>
-          <div><b>420+</b><span data-i18n="m4">equipment groups</span></div>
-          <div><b>800+</b><span data-i18n="m5">items tracked by serial</span></div>
+          <div><b>Odoo 19</b><span data-i18n="m6">Enterprise, upgraded from 17</span></div>
         </div>
       </div>
 
@@ -101,48 +100,48 @@
           <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span>
           <div class="thumb"><img src="img/rentory-app-desktop.webp" alt="" loading="lazy"></div>
           <div class="pbody">
-            <span class="kind" data-i18n="pc0k">Flutter app · phone and desktop</span>
+            <span class="kind" data-i18n="pc0k">Operations · app for phone and desktop</span>
             <h3 data-i18n="pc0t">Rentory app</h3>
             <p data-i18n="pc0d">Orders, pickups, returns and late fees on any phone or computer. Works with or without Odoo.</p>
             <span class="pres" data-i18n="pc0r">Android, iPhone, Windows and Mac from one codebase</span>
-          </div>
-        </a>
-        <a class="pcard" href="projects/rentory/">
-          <span class="lic" data-i18n="lic_closed_src">CLOSED-SOURCE</span>
-          <div class="thumb"><img src="img/rentory-order.webp" alt="" loading="lazy"></div>
-          <div class="pbody">
-            <span class="kind" data-i18n="pc1k">Custom Odoo app · rental and assets</span>
-            <h3 data-i18n="pc1t">Odoo Rentory</h3>
-            <p data-i18n="pc1d">Orders, equipment, contracts, deposits and late fees in one app.</p>
-            <span class="launch" data-i18n="pc1l">Launched on 1 August 2026</span>
-            <span class="pres" data-i18n="pc1r">No customer request lost since launch</span>
-          </div>
-        </a>
-        <a class="pcard" href="projects/invoices/">
-          <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span>
-          <div class="thumb"><img src="img/voucher.webp" alt="" loading="lazy"></div>
-          <div class="pbody">
-            <span class="kind" data-i18n="pc2k">Business documents · Arabic</span>
-            <h3 data-i18n="pc2t">Invoices and vouchers</h3>
-            <p data-i18n="pc2d">Generated from the order with the amount in Arabic words. No formatting or retyping by hand.</p>
-            <span class="pres" data-i18n="pc2r">Minutes instead of an hour per document</span>
           </div>
         </a>
         <a class="pcard" href="projects/shift-guard/">
           <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span>
           <div class="thumb"><img src="img/attendance.webp" alt="" loading="lazy"></div>
           <div class="pbody">
-            <span class="kind" data-i18n="pc3k">Odoo Attendances add-on · HR</span>
-            <h3 data-i18n="pc3t">Attendance Shift Guard</h3>
-            <p data-i18n="pc3d">GPS check-in, personal shifts, reminders and overtime approval.</p>
-            <span class="pres" data-i18n="pc3r">Replaced a WhatsApp attendance group</span>
+            <span class="kind" data-i18n="pc1k">HR · attendance, shifts and overtime</span>
+            <h3 data-i18n="pc1t">Attendance Shift Guard</h3>
+            <p data-i18n="pc1d">GPS check-in, personal shifts, reminders and overtime approval.</p>
+            <span class="pres" data-i18n="pc1r">Replaced a WhatsApp attendance group</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/invoices/">
+          <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span>
+          <div class="thumb"><img src="img/voucher.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc2k">Finance · Arabic invoices and vouchers</span>
+            <h3 data-i18n="pc2t">Invoices and vouchers</h3>
+            <p data-i18n="pc2d">Generated from the order with the amount in Arabic words. No formatting or retyping by hand.</p>
+            <span class="pres" data-i18n="pc2r">Minutes instead of an hour per document</span>
+          </div>
+        </a>
+        <a class="pcard" href="projects/rentory/">
+          <span class="lic" data-i18n="lic_closed_src">CLOSED-SOURCE</span>
+          <div class="thumb"><img src="img/rentory-order.webp" alt="" loading="lazy"></div>
+          <div class="pbody">
+            <span class="kind" data-i18n="pc4k">Operations · assets, contracts and scheduling</span>
+            <h3 data-i18n="pc4t">Odoo Rentory</h3>
+            <p data-i18n="pc4d">Orders, equipment, contracts, deposits and late fees in one app.</p>
+            <span class="launch" data-i18n="pc4l">Launched on 1 August 2026</span>
+            <span class="pres" data-i18n="pc4r">No customer request lost since launch</span>
           </div>
         </a>
         <a class="pcard" href="projects/analytics/">
           <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span>
           <div class="thumb"><img src="img/revenue.webp" alt="" loading="lazy"></div>
           <div class="pbody">
-            <span class="kind" data-i18n="pc5k">Odoo reporting · rental data</span>
+            <span class="kind" data-i18n="pc5k">Management · live reports</span>
             <h3 data-i18n="pc5t">Revenue analytics</h3>
             <p data-i18n="pc5d">Revenue and most-rented reports, one click away.</p>
             <span class="pres" data-i18n="pc5r">Investor reports without spreadsheets</span>
@@ -155,9 +154,9 @@
         <div class="sw-list">
         <!-- small:start -->
           <div class="sw">
-            <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span><h4 data-i18n="sw4t">Customer discounts</h4>
-            <p data-i18n="sw4d">Set a customer&#x27;s discount once, applied to every order.</p>
-            <span class="pres" data-i18n="sw4r">No more forgotten or wrong discounts</span>
+            <span class="lic" data-i18n="lic_open_src">OPEN-SOURCE</span><h4 data-i18n="sw3t">Customer discounts</h4>
+            <p data-i18n="sw3d">Set a customer&#x27;s discount once, applied to every order.</p>
+            <span class="pres" data-i18n="sw3r">No more forgotten or wrong discounts</span>
             <a class="src" href="https://github.com/BlaseDoesIt/odoo-rental-customer-discount" target="_blank" rel="noopener" data-i18n="sw_src">Source code ↗</a>
           </div>
           <div class="sw">
@@ -196,14 +195,28 @@
     </div>
   </section>
 
+  <section id="fits">
+    <div class="wrap">
+      <h2 data-i18n="fit_h">Where else this works</h2>
+      <p class="sub" data-i18n="fit_sub">I built these for a rental company, but the parts underneath are the same in most businesses.</p>
+      <ul class="fits">
+        <li><b data-i18n="f1a">Items tracked by serial, with contracts, deposits and a booking timeline</b><span data-i18n="f1b">Equipment and tool hire, property leasing, IT and medical equipment, vehicle fleets</span></li>
+        <li><b data-i18n="f2a">GPS check-in, personal shifts, reminders and overtime approval</b><span data-i18n="f2b">Construction sites, factories, retail branches, security and cleaning crews</span></li>
+        <li><b data-i18n="f3a">A phone app with barcode scanning, photos and signatures</b><span data-i18n="f3b">Deliveries, stock counts, site inspections, maintenance visits</span></li>
+        <li><b data-i18n="f4a">Arabic documents with the amount in words, and live revenue reports</b><span data-i18n="f4b">Any company that bills in Arabic and reports to owners or investors</span></li>
+        <li><b data-i18n="f5a">A discount set once per customer and applied automatically</b><span data-i18n="f5b">Wholesale, distribution, service contracts between companies</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="services">
     <div class="wrap">
       <h2 data-i18n="svc_h">What I can build for you</h2>
       <p class="sub" data-i18n="svc_sub">Start small with one painful task, or replace a whole manual process.</p>
       <div class="cards svc">
-        <div class="card"><h3><small>01</small><span data-i18n="sv1h">Custom Odoo modules</span></h3><p data-i18n="sv1p">New apps or changes to the ones you use: Sales, Inventory, Rental, Purchase, HR, Website. Python, OWL/JavaScript and QWeb reports.</p></div>
+        <div class="card"><h3><small>01</small><span data-i18n="sv1h">Custom Odoo modules</span></h3><p data-i18n="sv1p">New apps or changes to the ones you use: Sales, Purchase, Inventory, Manufacturing, Accounting, HR, Rental, Website. Python, OWL/JavaScript and QWeb reports.</p></div>
         <div class="card"><h3><small>02</small><span data-i18n="sv2h">Setup, upgrades and cleanup</span></h3><p data-i18n="sv2p">Version upgrades, importing data from Excel or old systems, fixing broken reports and Studio leftovers. Odoo.sh, Community or Enterprise.</p></div>
-        <div class="card"><h3><small>03</small><span data-i18n="sv3h">Documents and reports</span></h3><p data-i18n="sv3p">Arabic and English invoices, vouchers and printed forms in your own design, and the revenue reports your owners and investors ask for.</p></div>
+        <div class="card"><h3><small>03</small><span data-i18n="sv3h">Documents and reports</span></h3><p data-i18n="sv3p">Quotations, invoices, delivery notes, payslips and other printed forms in Arabic and English, in your own design, plus the reports your owners and investors ask for.</p></div>
         <div class="card"><h3><small>04</small><span data-i18n="sv4h">Apps for phone and desktop</span></h3><p data-i18n="sv4p">Apps your team installs on phones and desktops, connected to Odoo or standalone: bookings, field check-ins, stock counts, approvals. One app for Android, iPhone, Windows and Mac. Example: <a href="projects/rentory-app/">the Rentory app</a>.</p></div>
         <div class="card"><h3><small>05</small><span data-i18n="sv5h">Integrations and data</span></h3><p data-i18n="sv5p">Connect Odoo to your website, spreadsheets or other tools, and clean up messy product and customer data.</p></div>
         <div class="card"><h3><small>06</small><span data-i18n="sv6h">Support and changes</span></h3><p data-i18n="sv6p">A monthly plan for fixes, small features and help for your team after go-live.</p></div>
@@ -240,10 +253,10 @@
       <h2 data-i18n="pc_h">Pricing</h2>
       <p class="sub" data-i18n="pc_sub">Every project gets a fixed price after the call. These are starting points so you know what to expect.</p>
       <div class="prices">
-        <div class="price"><h3 data-i18n="pc1h">Small fix</h3><div class="amt"><span data-i18n="from">from</span> $150</div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc1p">One clear problem fixed: a broken report, an error message, or a field or rule your team needs. Price agreed before I start, delivered within 3 days, tested on a copy of your system first. If it turns out bigger, I tell you before doing anything more.</p></details></div>
-        <div class="price hl"><h3 data-i18n="pc2h">Custom module</h3><div class="amt"><span data-i18n="from">from</span> $1,000</div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc2p">One process automated end to end, like discounts, vouchers or attendance.</p></details></div>
+        <div class="price hl"><h3 data-i18n="pc2h">Custom module</h3><div class="amt"><span data-i18n="from">from</span> $1,000</div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc2p">One process automated end to end, like purchase approvals, job costing or GPS attendance.</p></details></div>
         <div class="price"><h3 data-i18n="pc3h">Full custom app</h3><div class="amt"><span data-i18n="from">from</span> $5,000</div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc3p">A complete system like Odoo Rentory, or an app for phone and desktop.</p></details></div>
         <div class="price"><h3 data-i18n="pc4h">Monthly support</h3><div class="amt"><span data-i18n="from">from</span> $500<small data-i18n="mo"> /month</small></div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc4p">Fixes and small changes as your team needs them, with a reply within one working day. A short report each month of what was done. New features are quoted separately.</p></details></div>
+        <div class="price"><h3 data-i18n="pc1h">Small fix</h3><div class="amt"><span data-i18n="from">from</span> $150</div><details class="more"><summary data-i18n="incl">What's included</summary><p data-i18n="pc1p">One clear problem fixed: a broken report, an error message, or a field or rule your team needs. Price agreed before I start, delivered within 3 days, tested on a copy of your system first. If it turns out bigger, I tell you before doing anything more.</p></details></div>
       </div>
       <p class="note" data-i18n="pc_note">Small fixes are paid on delivery. Bigger projects are paid in stages: part up front, the rest on delivery. You own all the code.</p>
     </div>
@@ -254,6 +267,7 @@
       <h2 data-i18n="faq_h">Questions</h2>
       <details><summary data-i18n="q1">Which Odoo versions do you work with?</summary><p data-i18n="a1">Mainly Odoo 17, 18 and 19, Community or Enterprise, on Odoo.sh or your own server. I've upgraded a live company from 17 to 19.</p></details>
       <details><summary data-i18n="q2">We don't use Odoo. Can you still help?</summary><p data-i18n="a2">Yes. I can build a standalone app for phone and desktop, or help you decide whether Odoo is a good fit before you spend money on it.</p></details>
+      <details><summary data-i18n="q7">Do you only work with rental companies?</summary><p data-i18n="a7">No. Rental is where I work day to day, but most of what I built there is the same in a contracting firm, a distributor or a factory: attendance, printed documents, asset tracking, approvals and reports.</p></details>
       <details><summary data-i18n="q3">Who owns the code?</summary><p data-i18n="a3">You do. You get the full source code, installed on your system or your GitHub.</p></details>
       <details><summary data-i18n="q4">When are you available?</summary><p data-i18n="a4">Send me the problem during your workday. I work on it that evening, and you see progress the next morning. I'm available for calls from 6 PM to midnight Damascus time (7 PM to 1 AM in Dubai, the same as Riyadh).</p></details>
       <details><summary data-i18n="q5">How do we pay?</summary><p data-i18n="a5">By card (Visa / Mastercard), PayPal, bank transfer, Wise, Revolut, Payoneer or Paysera, and other methods on request. You get an invoice in my name with a secure payment link, pay through it like any online payment, and I confirm once it reaches me. Payments go through a payment partner, so your receipt may show their name instead of mine. Small fixes are paid on delivery, bigger projects in stages.</p></details>
@@ -295,11 +309,11 @@ window.AR = {
   nav_work:"أعمالي", nav_services:"الخدمات", nav_process:"طريقة العمل", nav_pricing:"الأسعار", nav_faq:"أسئلة", nav_cta:"احجز مكالمة",
   eyebrow:"مطوّر أنظمة أعمال",
   h1:"أؤتمت العمل اليدوي في شركتك.",
-  lead:"وحدات Odoo مخصصة وتطبيقات أعمال للهاتف وسطح المكتب. أدير نظام Odoo في شركة لتأجير المعدات الإعلامية، لذلك أبني ما يحتاجه فريقك فعلاً.",
+  lead:"وحدات Odoo مخصصة وتطبيقات أعمال للهاتف وسطح المكتب. أدير نظام Odoo في شركة كل يوم، من الموارد البشرية والمالية إلى المبيعات والعمليات، لذلك أبني ما يحتاجه فريقك فعلاً.",
   cta_call:"احجز مكالمة مجانية 15 دقيقة", cta_work:"شاهد ما بنيته",
   avail:"متاح للعملاء في الخليج وحول العالم، بالعربية والإنجليزية.",
   cap_name:"قصي الحافظ", cap_role:"مطوّر أنظمة أعمال، سكون لتأجير المعدات",
-  proof:"<b>80+</b> طلب تأجير شهرياً و<b>50+</b> موظفاً، كلها تمر عبر <a href=\"#work\">النظام الذي بنيته لسكون</a>.",
+  proof:"<b>50+</b> موظفاً و<b>80+</b> طلباً شهرياً، كلها تمر عبر <a href=\"#work\">النظام الذي بنيته لسكون</a>.",
   pain_h:"مشاكل حللتها بالفعل",
   pain_sub:"كل واحدة من هذه كانت مشكلة حقيقية في الشركة التي أعمل بها، وكلها اليوم يتولاها النظام الذي بنيته.",
   pain1:"الدوام يُسجَّل في مجموعة واتساب، وأحدهم ينسخ الأوقات يدوياً.", pain1a:"تسجيل حضور بـ GPS في Odoo، مع تذكيرات وموافقة على الإضافي",
@@ -307,37 +321,38 @@ window.AR = {
   pain3:"لا أحد يعرف بالضبط أين كل قطعة، ومع من، ومتى تعود.", pain3a:"كل رقم تسلسلي يُظهر حالته وموقعه وموعد عودته",
   pain4:"طلبات العملاء تضيع بين المحادثات والمكالمات والدفاتر.", pain4a:"كل طلب يصبح طلباً في Odoo Rentory، ولم يضع أي طلب منذ الإطلاق",
   pain5:"تقارير الإيرادات للمالكين والمستثمرين تأخذ أياماً لتجهيزها.", pain5a:"تقارير إيرادات حيّة في Odoo بنقرة واحدة",
+  d_hr:"الموارد البشرية", d_fin:"المالية", d_ops:"العمليات", d_sales:"المبيعات", d_mgmt:"الإدارة", d_all:"كل الفرق",
   pain6:"Odoo مُثبَّت، لكن فريقك يتحايل عليه لأنه لا يناسب طريقة عملكم.", pain6a:"وحدات مخصصة مبنية حول طريقة عمل الفريق",
   work_h:"أين أعمل: سكون لتأجير المعدات",
-  work_p:"شركة لتأجير الكاميرات والمعدات الإعلامية في دمشق، تابعة لسكون القابضة. منذ أيلول 2025 أدير نظام Odoo 19 Enterprise لديهم وأكتب وحداتهم المخصصة. ولدي سنة خبرة في المحاسبة، لذلك تخرج الفواتير والسندات والتقارير كما يتوقعها الفريق المالي. كل ما يلي يعمل فعلياً ويُستخدم يومياً.",
-  m2:"فاتورة شهرياً", m3:"عميلاً نشطاً", m4:"مجموعة معدات", m5:"قطعة مُتتبَّعة بالرقم التسلسلي",
+  work_p:"شركة لتأجير الكاميرات والمعدات الإعلامية في دمشق، تابعة لسكون القابضة. منذ أيلول 2025 أدير نظام Odoo 19 Enterprise لديهم وأكتب وحداتهم المخصصة للموارد البشرية والمالية والمبيعات والعمليات. ولدي سنة خبرة في المحاسبة، لذلك تخرج المستندات والتقارير كما يتوقعها الفريق المالي. كل ما يلي يعمل فعلياً ويُستخدم يومياً.",
+  m1:"موظفاً على النظام", m3:"عميلاً نشطاً", m6:"Enterprise، بعد الترقية من الإصدار 17",
   pg_h:"ما بنيته هناك",
   /* project-cards:start */
   sw_h:"أعمال أصغر",
-  pc0k:"تطبيق Flutter · الهاتف وسطح المكتب",
+  pc0k:"العمليات · تطبيق للهاتف وسطح المكتب",
   pc0t:"تطبيق Rentory",
   pc0d:"الطلبات والتسليم والإرجاع وغرامات التأخير على أي هاتف أو كمبيوتر. يعمل مع Odoo أو بدونه.",
   pc0r:"Android وiPhone وWindows وMac من كود واحد",
   lic_open_src:"مفتوح المصدر",
-  pc1l:"أُطلق في 1 أغسطس 2026",
-  pc1k:"تطبيق Odoo مخصص · التأجير والأصول",
-  pc1t:"Odoo Rentory",
-  pc1d:"الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد.",
-  pc1r:"لم يضع أي طلب عميل منذ الإطلاق",
-  lic_closed_src:"مغلق المصدر",
-  pc2k:"مستندات أعمال · بالعربية",
+  pc1k:"الموارد البشرية · الحضور والدوامات والإضافي",
+  pc1t:"حارس الدوام",
+  pc1d:"تسجيل حضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي.",
+  pc1r:"حلّ محل مجموعة واتساب للدوام",
+  pc2k:"المالية · فواتير وسندات بالعربية",
   pc2t:"الفواتير والسندات",
   pc2d:"تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية.",
   pc2r:"دقائق بدل ساعة لكل مستند",
-  pc3k:"إضافة لتطبيق الحضور في Odoo · موارد بشرية",
-  pc3t:"حارس الدوام",
-  pc3d:"تسجيل حضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي.",
-  pc3r:"حلّ محل مجموعة واتساب للدوام",
-  sw4t:"خصومات العملاء",
-  sw4d:"اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب.",
-  sw4r:"لا خصومات منسية أو خاطئة بعد اليوم",
+  sw3t:"خصومات العملاء",
+  sw3d:"اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب.",
+  sw3r:"لا خصومات منسية أو خاطئة بعد اليوم",
   sw_src:"الكود المصدري ↗",
-  pc5k:"تقارير Odoo · بيانات التأجير",
+  pc4l:"أُطلق في 1 أغسطس 2026",
+  pc4k:"العمليات · الأصول والعقود والجدولة",
+  pc4t:"Odoo Rentory",
+  pc4d:"الطلبات والمعدات والعقود والتأمينات وغرامات التأخير في تطبيق واحد.",
+  pc4r:"لم يضع أي طلب عميل منذ الإطلاق",
+  lic_closed_src:"مغلق المصدر",
+  pc5k:"الإدارة · تقارير حيّة",
   pc5t:"تحليلات الإيرادات",
   pc5d:"تقارير الإيرادات والأكثر تأجيراً بنقرة واحدة.",
   pc5r:"تقارير المستثمرين دون جداول Excel",
@@ -349,11 +364,18 @@ window.AR = {
   tm_ini:"مر",
   tm_name:"محمد الغزالي الرفاعي",
   tm_role:"مدير العمليات، سكون لتأجير المعدات",
+  fit_h:"أين يصلح هذا أيضاً",
+  fit_sub:"بنيت هذه لشركة تأجير، لكن الأجزاء التي تقوم عليها هي نفسها في معظم الشركات.",
+  f1a:"تتبع القطع بالرقم التسلسلي، مع العقود والتأمينات وجدول الحجوزات", f1b:"تأجير المعدات والأدوات، تأجير العقارات، الأجهزة الطبية وأجهزة تقنية المعلومات، أساطيل المركبات",
+  f2a:"تسجيل الحضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي", f2b:"مواقع البناء، المصانع، فروع التجزئة، فرق الأمن والتنظيف",
+  f3a:"تطبيق هاتف بمسح الباركود والصور والتوقيع", f3b:"التوصيل، جرد المخزون، الكشف على المواقع، زيارات الصيانة",
+  f4a:"مستندات عربية مع المبلغ بالحروف، وتقارير إيرادات حيّة", f4b:"أي شركة تصدر فواتيرها بالعربية وترفع تقاريرها للمالكين أو المستثمرين",
+  f5a:"خصم يُضبط مرة واحدة لكل عميل ويُطبَّق تلقائياً", f5b:"تجارة الجملة، التوزيع، عقود الخدمات بين الشركات",
   svc_h:"ما يمكنني بناؤه لك",
   svc_sub:"ابدأ بمهمة واحدة مزعجة، أو استبدل عملية يدوية كاملة.",
-  sv1h:"وحدات Odoo مخصصة", sv1p:"تطبيقات جديدة أو تعديلات على ما تستخدمه: المبيعات، المخزون، التأجير، المشتريات، الموارد البشرية، الموقع. بلغة Python وOWL/JavaScript وتقارير QWeb.",
+  sv1h:"وحدات Odoo مخصصة", sv1p:"تطبيقات جديدة أو تعديلات على ما تستخدمه: المبيعات، المشتريات، المخزون، التصنيع، المحاسبة، الموارد البشرية، التأجير، الموقع. بلغة Python وOWL/JavaScript وتقارير QWeb.",
   sv2h:"الإعداد والترقية والتنظيف", sv2p:"ترقية الإصدارات، استيراد البيانات من Excel أو الأنظمة القديمة، إصلاح التقارير المعطلة وبقايا Studio. على Odoo.sh، Community أو Enterprise.",
-  sv3h:"المستندات والتقارير", sv3p:"فواتير وسندات ونماذج مطبوعة بالعربية والإنجليزية بتصميم شركتك، وتقارير الإيرادات التي يطلبها المالكون والمستثمرون.",
+  sv3h:"المستندات والتقارير", sv3p:"عروض أسعار وفواتير وإشعارات تسليم وقسائم رواتب وغيرها من النماذج المطبوعة بالعربية والإنجليزية بتصميم شركتك، والتقارير التي يطلبها المالكون والمستثمرون.",
   sv4h:"تطبيقات للهاتف وسطح المكتب", sv4p:"تطبيقات يثبّتها فريقك على الهواتف وأجهزة سطح المكتب، مرتبطة بـ Odoo أو مستقلة: حجوزات، تسجيل حضور ميداني، جرد مخزون، موافقات. تطبيق واحد يعمل على Android وiPhone وWindows وMac. مثال: <a href=\"projects/rentory-app/\">تطبيق Rentory</a>.",
   sv5h:"الربط والبيانات", sv5p:"ربط Odoo بموقعك أو جداولك أو أدواتك الأخرى، وتنظيف بيانات المنتجات والعملاء الفوضوية.",
   sv6h:"الدعم والتعديلات", sv6p:"خطة شهرية للإصلاحات والميزات الصغيرة ومساعدة فريقك بعد الإطلاق.",
@@ -372,13 +394,14 @@ window.AR = {
   from:"من",
   incl:"ما الذي تشمله",
   pc1h:"إصلاح صغير", pc1p:"مشكلة واحدة واضحة تُحل: تقرير معطّل، رسالة خطأ، أو حقل أو قاعدة يحتاجها فريقك. السعر يُتفق عليه قبل أن أبدأ، والتسليم خلال 3 أيام بعد الاختبار على نسخة من نظامك. وإن تبيّن أنها أكبر، أخبرك قبل أن أعمل أي شيء إضافي.",
-  pc2h:"وحدة مخصصة", pc2p:"عملية واحدة مؤتمتة بالكامل، مثل الخصومات أو السندات أو الحضور.",
+  pc2h:"وحدة مخصصة", pc2p:"عملية واحدة مؤتمتة بالكامل، مثل موافقات المشتريات أو حساب تكلفة المشاريع أو الحضور بـ GPS.",
   pc3h:"تطبيق مخصص كامل", pc3p:"نظام متكامل مثل Odoo Rentory، أو تطبيق للهاتف وسطح المكتب.",
   pc4h:"دعم شهري", mo:" /شهرياً", pc4p:"إصلاحات وتعديلات صغيرة كلما احتاجها فريقك، مع رد خلال يوم عمل واحد. تقرير قصير كل شهر بما تم إنجازه. الميزات الجديدة تُسعَّر بشكل منفصل.",
   pc_note:"الإصلاحات الصغيرة تُدفع عند التسليم. المشاريع الأكبر تُدفع على مراحل: جزء مقدماً والباقي عند التسليم. الكود كله ملكك.",
   faq_h:"أسئلة",
   q1:"مع أي إصدارات Odoo تعمل؟", a1:"أساساً Odoo 17 و18 و19، نسخة Community أو Enterprise، على Odoo.sh أو على خادمك. وقد رقّيت شركة قائمة من الإصدار 17 إلى 19.",
   q2:"لا نستخدم Odoo. هل يمكنك المساعدة؟", a2:"نعم. أستطيع بناء تطبيق مستقل للهاتف وسطح المكتب، أو مساعدتك في تقرير ما إذا كان Odoo مناسباً قبل أن تنفق عليه.",
+  q7:"هل تعمل مع شركات التأجير فقط؟", a7:"لا. التأجير هو مجال عملي اليومي، لكن معظم ما بنيته هناك هو نفسه في شركة مقاولات أو توزيع أو في مصنع: الحضور، والمستندات المطبوعة، وتتبع الأصول، والموافقات، والتقارير.",
   q3:"لمن يعود الكود؟", a3:"لك. تحصل على الكود المصدري كاملاً، مثبتاً على نظامك أو على GitHub الخاص بك.",
   q4:"متى تكون متاحاً؟", a4:"أرسل لي المشكلة خلال يوم عملك، فأعمل عليها مساءً وترى التقدم صباح اليوم التالي. متاح للمكالمات من 6 مساءً حتى منتصف الليل بتوقيت دمشق (7 مساءً حتى 1 فجراً في دبي، ونفس التوقيت في الرياض).",
   q5:"كيف ندفع؟", a5:"بالبطاقة (Visa / Mastercard) أو PayPal أو التحويل البنكي أو Wise أو Revolut أو Payoneer أو Paysera، وطرق أخرى عند الطلب. تصلك فاتورة باسمي مع رابط دفع آمن، تدفع عبره كأي دفعة إلكترونية، وأؤكد لك عند وصول المبلغ. تمر الدفعات عبر شريك دفع، لذلك قد يظهر اسمه على إيصالك بدلاً من اسمي. الإصلاحات الصغيرة تُدفع عند التسليم، والمشاريع الأكبر على مراحل.",
@@ -389,6 +412,6 @@ window.AR = {
   foot:"© 2026 محمد قصي الحافظ"
 };
 </script>
-<script src="i18n.js?v=21"></script>
+<script src="i18n.js?v=22"></script>
 </body>
 </html>
