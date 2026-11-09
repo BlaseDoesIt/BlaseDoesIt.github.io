@@ -1,140 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Revenue analytics | Kosai Alhafez</title>
-<meta name="description" content="Revenue and most-rented reports by month, year, category, customer and serial, inside Odoo.">
 <meta property="og:title" content="Revenue analytics | Kosai Alhafez">
-<meta property="og:description" content="Revenue and most-rented reports by month, year, category, customer and serial, inside Odoo.">
 <meta property="og:image" content="https://blasedoesit.com/img/og.jpg?v=2">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../../favicon.png" type="image/png" sizes="64x64">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=23">
-<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://blasedoesit.com/global/projects/analytics/">
+<meta http-equiv="refresh" content="0; url=/global/projects/analytics/">
+<script>location.replace("/global/projects/analytics/" + location.hash)</script>
 </head>
-<body>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="../../" data-i18n="u_brand">Kosai Alhafez</a>
-    <button class="lang" id="langBtn" type="button">العربية</button>
-    <a class="btn solid" href="https://cal.com/kosai/15min" target="_blank" rel="noopener" data-i18n="u_cta">Book a call</a>
-  </div>
-</header>
-
-<main>
-  <div class="wrap hero proj-hero">
-    <a class="crumb" href="../../#work" data-i18n="u_back">← All projects</a>
-    <span class="lic" data-i18n="u_open_src">OPEN-SOURCE</span>
-    <p class="eyebrow" data-i18n="k17">Management · live reports</p>
-    <h1 class="page-h1" data-i18n="k18">Revenue analytics</h1>
-    <p class="lead" data-i18n="k19">Revenue and most-rented reports by month, year, category, customer and serial, inside Odoo.</p>
-    
-    <div class="stats n2"><div class="stat"><b class="w" data-i18n="k1">Chart · Pivot · List</b><span data-i18n="k2">switch views in one click</span></div><div class="stat"><b class="w" data-i18n="k3">Any angle</b><span data-i18n="k4">group by product, category, customer, month or year</span></div></div>
-  </div>
-
-  <section>
-    <div class="wrap">
-      <h2 data-i18n="u_flow_h">Before and after</h2>
-      <div class="flow">
-        <div class="flow-row"><span class="lane-label b" data-i18n="u_before">Before</span><ol class="lane"><li class="node b" style="--i:0"><i class="sheen"></i><span class="num">01</span><span data-i18n="k8">Export orders to Excel</span></li><li class="node b" style="--i:1"><i class="sheen"></i><span class="num">02</span><span data-i18n="k9">Add up revenue per item by hand</span></li><li class="node b" style="--i:2"><i class="sheen"></i><span class="num">03</span><span data-i18n="k10">Build charts for the investor report</span></li><li class="node pain" style="--i:3"><i class="sheen"></i><span class="num"><span data-i18n="u_pain">Problem</span></span><span data-i18n="k11">Days of work, and the numbers were already out of date when the report was done.</span></li></ol></div>
-        <div class="flow-bridge" aria-hidden="true"></div>
-        <div class="flow-row"><span class="lane-label a" data-i18n="u_after">After</span><ol class="lane"><li class="node a" style="--i:5"><i class="sheen"></i><span class="num">01</span><span data-i18n="k12">Open the report in Odoo</span></li><li class="node a" style="--i:6"><i class="sheen"></i><span class="num">02</span><span data-i18n="k13">Filter by month, year or all time</span></li><li class="node a" style="--i:7"><i class="sheen"></i><span class="num">03</span><span data-i18n="k14">Switch between chart, pivot and list</span></li><li class="node a" style="--i:8"><i class="sheen"></i><span class="num">04</span><span data-i18n="k15">Insert straight into a spreadsheet</span></li><li class="node res" style="--i:9"><i class="sheen"></i><span class="num"><span data-i18n="u_res">Result</span></span><span data-i18n="k16">Live numbers for management and investors, without rebuilding a spreadsheet every month.</span></li></ol></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap feat-grid">
-      <div>
-        <h2 data-i18n="u_feat_h">What it does</h2>
-        <ul class="ticks"><li><span data-i18n="k5">Most rented products this month, this year or all time</span></li><li><span data-i18n="k6">Paid revenue by category, customer and serial</span></li><li><span data-i18n="k7">Built as a read-only SQL report, so it&#x27;s fast</span></li></ul>
-      </div>
-      <div>
-        <h3 data-i18n="u_tech_h">Built with</h3>
-        <div class="chips"><span class="chip">SQL views</span><span class="chip">Python</span><span class="chip">Odoo reporting</span></div>
-        <a class="btn src" href="https://github.com/BlaseDoesIt/odoo-rental-revenue-analytics" target="_blank" rel="noopener" data-i18n="u_src_btn">View the source code ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2 data-i18n="u_shots_h">Screenshots</h2>
-      <div class="gallery n1"><figure class="shot"><a href="../../img/revenue.webp" target="_blank"><img src="../../img/revenue.webp" alt="Paid revenue by equipment category" loading="lazy" width="1400" height="662"></a></figure></div>
-    </div>
-  </section>
-  <section>
-    <div class="wrap next-grid">
-      <a class="next-card" href="../rentory-app/">
-        <span class="muted" data-i18n="u_next">Next project</span>
-        <b data-i18n="k20">Rentory app</b>
-      </a>
-      <div class="need">
-        <h3 data-i18n="u_need_h">Need something like this?</h3>
-        <p class="muted" data-i18n="u_need_p">Tell me what your team does by hand today. A 15 minute call is enough to see if I can automate it.</p>
-        <a class="btn solid" href="https://cal.com/kosai/15min" target="_blank" rel="noopener" data-i18n="u_need_btn">Book a free 15 min call</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap"><span data-i18n="u_foot">© 2026 MHD Kosai Alhafez</span><span>Damascus · UTC+3</span></div>
-</footer>
-
-<script>
-window.TITLES = {"en": "Revenue analytics | Kosai Alhafez", "ar": "تحليلات الإيرادات | قصي الحافظ"};
-window.AR = {
-"u_brand": "قصي الحافظ",
-"u_cta": "احجز مكالمة",
-"u_back": "→ كل المشاريع",
-"u_flow_h": "قبل وبعد",
-"u_before": "قبل",
-"u_after": "بعد",
-"u_problem": "المشكلة",
-"u_result": "النتيجة",
-"u_feat_h": "ما الذي يفعله",
-"u_tech_h": "بُني باستخدام",
-"u_shots_h": "لقطات الشاشة",
-"u_src_btn": "عرض الكود المصدري ↗",
-"u_src_link": "الكود المصدري ↗",
-"u_open_src": "مفتوح المصدر",
-"u_closed_src": "مغلق المصدر",
-"u_next": "المشروع التالي",
-"u_need_h": "تحتاج شيئاً مشابهاً؟",
-"u_need_p": "أخبرني ما الذي يفعله فريقك يدوياً اليوم. مكالمة 15 دقيقة كافية لنعرف إن كان بإمكاني أتمتته.",
-"u_need_btn": "احجز مكالمة مجانية 15 دقيقة",
-"u_foot": "© 2026 محمد قصي الحافظ",
-"k1": "رسم · محوري · قائمة",
-"k2": "التبديل بين العروض بنقرة",
-"k3": "من كل زاوية",
-"k4": "التجميع حسب المنتج أو الفئة أو العميل أو الشهر أو السنة",
-"k5": "المنتجات الأكثر تأجيراً هذا الشهر أو هذه السنة أو كل الفترات",
-"k6": "الإيرادات المدفوعة حسب الفئة والعميل والرقم التسلسلي",
-"k7": "مبني كتقرير SQL للقراءة فقط، لذلك هو سريع",
-"k8": "تصدير الطلبات إلى Excel",
-"k9": "جمع إيراد كل قطعة يدوياً",
-"k10": "إعداد رسوم بيانية لتقرير المستثمرين",
-"u_pain": "المشكلة",
-"k11": "أيام من العمل، والأرقام قديمة عند انتهاء التقرير.",
-"k12": "فتح التقرير في Odoo",
-"k13": "التصفية حسب الشهر أو السنة أو كل الفترات",
-"k14": "التبديل بين الرسم والجدول المحوري والقائمة",
-"k15": "الإدراج مباشرة في جدول بيانات",
-"u_res": "النتيجة",
-"k16": "أرقام حيّة للإدارة والمستثمرين، دون إعادة بناء جدول كل شهر.",
-"k17": "الإدارة · تقارير حيّة",
-"k18": "تحليلات الإيرادات",
-"k19": "تقارير الإيرادات والأكثر تأجيراً حسب الشهر والسنة والفئة والعميل والرقم التسلسلي، داخل Odoo.",
-"k20": "تطبيق Rentory"
-};
-</script>
-<script src="../../i18n.js?v=23"></script>
-<script src="../../anim.js?v=23"></script>
+<body style="background:#000;color:#ccc;font-family:sans-serif">
+<p><a href="/global/projects/analytics/" style="color:#fff">Revenue analytics</a></p>
 </body>
 </html>

@@ -1,12 +1,18 @@
-"""Generates projects/<slug>/index.html for every project below.
+"""Generates the project pages for both versions of the site, for every project below:
+  gulf/projects/<slug>/    English + Arabic toggle
+  global/projects/<slug>/  English only
+  projects/<slug>/         redirect for old links, to the global page
+It also writes the project cards into gulf/index.html and global/index.html (Arabic strings only into gulf).
 
 Run from the website folder:  python _build/build_projects.py
 GitHub Pages ignores folders starting with "_", so this script is not published.
 Each text is (english, arabic). Edit here, re-run, commit the generated pages.
 """
-import html, json, os
+import html, json, os, re
 
-V = "23"  # bump to bust browser caches of style.css / i18n.js
+V = "24"  # bump to bust browser caches of style.css / i18n.js
+SITE = "https://blasedoesit.com"
+VARIANTS = ("gulf", "global")
 
 PROJECTS = [
   {
@@ -268,9 +274,11 @@ UI = {
 e = html.escape
 
 class Page:
-    def __init__(self): self.ar = {}; self.n = 0
+    def __init__(self, english_only=False): self.ar = {}; self.n = 0; self.english_only = english_only
     def t(self, pair, tag="span", cls="", key=None):
         en, ar = pair
+        if self.english_only:  # e.g. "Receipt (سند قبض)" -> "Receipt" on the global pages
+            en = re.sub(r"\s*\([؀-ۿ\s]+\)", "", en)
         if key is None: self.n += 1; key = f"k{self.n}"
         self.ar[key] = e(ar)
         c = f' class="{cls}"' if cls else ""
@@ -283,8 +291,10 @@ def lane(p, steps, kind, end_pair, end_kind, start=0):
     end = f'<li class="node {end_kind}" style="--i:{start+len(steps)}"><i class="sheen"></i><span class="num">{p.t(UI["problem" if end_kind=="pain" else "result"], key="u_"+end_kind)}</span>{p.t(end_pair)}</li>'
     return f'<ol class="lane">{nodes}{end}</ol>'
 
-def build(proj, nxt):
-    p = Page()
+def build(proj, nxt, variant):
+    """variant "gulf" keeps the Arabic toggle; "global" is English only."""
+    ar_on = variant == "gulf"
+    p = Page(english_only=not ar_on)
     for k, v in UI.items(): p.ar["u_" + k] = e(v[1])
     T = lambda k, **kw: p.t(UI[k], key="u_" + k, **kw)
     title_en, title_ar = proj["title"]
@@ -299,7 +309,7 @@ def build(proj, nxt):
     shots = ""
     if proj["shots"]:
         items = "".join(
-            f'<figure class="shot"><a href="../../img/{f}" target="_blank"><img src="../../img/{f}" alt="{e(c[0])}" loading="lazy" width="{w}" height="{h}"></a></figure>'
+            f'<figure class="shot"><a href="/img/{f}" target="_blank"><img src="/img/{f}" alt="{e(c[0])}" loading="lazy" width="{w}" height="{h}"></a></figure>'
             for f, w, h, c in proj["shots"])
         shots = f'''
   <section>
@@ -313,6 +323,21 @@ def build(proj, nxt):
         <div class="flow-bridge" aria-hidden="true"></div>
         <div class="flow-row">{T("after", cls="lane-label a")}{lane(p, proj["after"], "a", proj["result"], "res", len(proj["before"]) + 2)}</div>
       </div>'''
+    path = f'projects/{proj["slug"]}/'
+    alt = (f'<link rel="canonical" href="{SITE}/{variant}/{path}">\n'
+           f'<link rel="alternate" hreflang="x-default" href="{SITE}/global/{path}">\n'
+           f'<link rel="alternate" hreflang="en" href="{SITE}/global/{path}">\n'
+           f'<link rel="alternate" hreflang="ar" href="{SITE}/gulf/{path}">\n'
+           f'<link rel="alternate" hreflang="en-AE" href="{SITE}/gulf/{path}">')
+    fonts = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+             '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">\n') if ar_on else ""
+    lang_btn = '\n    <button class="lang" id="langBtn" type="button">العربية</button>' if ar_on else ""
+    i18n = f'''<script>
+window.TITLES = {json.dumps({"en": title_en + " | Kosai Alhafez", "ar": title_ar + " | قصي الحافظ"}, ensure_ascii=False)};
+window.AR = {json.dumps(p.ar, ensure_ascii=False, indent=0)};
+</script>
+<script src="/i18n.js?v={V}"></script>
+''' if ar_on else ""
     return f'''<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -323,27 +348,24 @@ def build(proj, nxt):
 <meta property="og:title" content="{e(title_en)} | Kosai Alhafez">
 <meta property="og:description" content="{e(proj["summary"][0])}">
 <meta property="og:image" content="https://blasedoesit.com/img/og.jpg?v=2">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../../favicon.png" type="image/png" sizes="64x64">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v={V}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+{alt}
+{fonts}<link rel="stylesheet" href="/style.css?v={V}">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../../" data-i18n="u_brand">Kosai Alhafez</a>
-    <button class="lang" id="langBtn" type="button">العربية</button>
+    <a class="brand" href="/{variant}/" data-i18n="u_brand">Kosai Alhafez</a>{lang_btn}
     <a class="btn solid" href="https://cal.com/kosai/15min" target="_blank" rel="noopener" data-i18n="u_cta">Book a call</a>
   </div>
 </header>
 
 <main>
   <div class="wrap hero proj-hero">
-    <a class="crumb" href="../../#work" data-i18n="u_back">← All projects</a>
+    <a class="crumb" href="/{variant}/#work" data-i18n="u_back">← All projects</a>
     {lic}
     {p.t(proj["kind"], tag="p", cls="eyebrow")}
     {p.t(proj["title"], tag="h1", cls="page-h1")}
@@ -389,15 +411,10 @@ def build(proj, nxt):
 </main>
 
 <footer>
-  <div class="wrap"><span data-i18n="u_foot">© 2026 MHD Kosai Alhafez</span><span>Damascus · UTC+3</span></div>
+  <div class="wrap"><span data-i18n="u_foot">© 2026 MHD Kosai Alhafez</span></div>
 </footer>
 
-<script>
-window.TITLES = {json.dumps({"en": title_en + " | Kosai Alhafez", "ar": title_ar + " | قصي الحافظ"}, ensure_ascii=False)};
-window.AR = {json.dumps(p.ar, ensure_ascii=False, indent=0)};
-</script>
-<script src="../../i18n.js?v={V}"></script>
-<script src="../../anim.js?v={V}"></script>
+{i18n}<script src="/anim.js?v={V}"></script>
 </body>
 </html>
 '''
@@ -440,7 +457,7 @@ def cards():
         ar[k+"k"], ar[k+"t"], ar[k+"d"], ar[k+"r"] = (e(pr["kind"][1]), e(pr["title"][1]), e(pr["card"][1]), e(pr["card_result"][1]))
         out.append(f'''        <a class="pcard{' wide' if pr.get('wide') else ''}" href="projects/{pr["slug"]}/">
           {lic_tag(pr, ar)}
-          <div class="thumb"><img src="img/{pr["thumb"]}" alt="" loading="lazy"></div>
+          <div class="thumb"><img src="/img/{pr["thumb"]}" alt="" loading="lazy"></div>
           <div class="pbody">
             <span class="kind" data-i18n="{k}k">{e(pr["kind"][0])}</span>
             <h3 data-i18n="{k}t">{e(pr["title"][0])}</h3>
@@ -458,16 +475,38 @@ def splice(s, a, b, inner):
 if __name__ == "__main__":
     root = os.path.join(os.path.dirname(__file__), "..")
     big = [pr for pr in PROJECTS if not pr.get("small")]
-    for i, pr in enumerate(big):
-        d = os.path.join(root, "projects", pr["slug"]); os.makedirs(d, exist_ok=True)
+    def put(rel, text):
+        d = os.path.join(root, rel); os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, "index.html"), "w", encoding="utf-8", newline=NL) as f:
-            f.write(build(pr, big[(i + 1) % len(big)]))
+            f.write(text)
+    for i, pr in enumerate(big):
+        for variant in VARIANTS:
+            put(os.path.join(variant, "projects", pr["slug"]), build(pr, big[(i + 1) % len(big)], variant))
+        target = f'/global/projects/{pr["slug"]}/'  # old /projects/<slug>/ links
+        put(os.path.join("projects", pr["slug"]), f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{e(pr["title"][0])} | Kosai Alhafez</title>
+<meta property="og:title" content="{e(pr["title"][0])} | Kosai Alhafez">
+<meta property="og:image" content="{SITE}/img/og.jpg?v=2">
+<link rel="canonical" href="{SITE}{target}">
+<meta http-equiv="refresh" content="0; url={target}">
+<script>location.replace("{target}" + location.hash)</script>
+</head>
+<body style="background:#000;color:#ccc;font-family:sans-serif">
+<p><a href="{target}" style="color:#fff">{e(pr["title"][0])}</a></p>
+</body>
+</html>
+''')
     grid, small, ar = cards()
-    ip = os.path.join(root, "index.html")
-    s = open(ip, encoding="utf-8").read()
-    s = splice(s, "<!-- projects:start -->", "<!-- projects:end -->", grid)
-    s = splice(s, "<!-- small:start -->", "<!-- small:end -->", small)
-    a, b = "/* project-cards:start */", "/* project-cards:end */"
-    s = s[:s.index(a) + len(a)] + NL + "".join(f'  {k}:{json.dumps(v, ensure_ascii=False)},' + NL for k, v in ar.items()) + "  " + s[s.index(b):]
-    open(ip, "w", encoding="utf-8", newline=NL).write(s)
-    print("built", len(big), "project pages")
+    for variant in VARIANTS:
+        ip = os.path.join(root, variant, "index.html")
+        s = open(ip, encoding="utf-8").read()
+        s = splice(s, "<!-- projects:start -->", "<!-- projects:end -->", grid)
+        s = splice(s, "<!-- small:start -->", "<!-- small:end -->", small)
+        a, b = "/* project-cards:start */", "/* project-cards:end */"
+        if a in s:  # only the gulf page carries Arabic strings
+            s = s[:s.index(a) + len(a)] + NL + "".join(f'  {k}:{json.dumps(v, ensure_ascii=False)},' + NL for k, v in ar.items()) + "  " + s[s.index(b):]
+        open(ip, "w", encoding="utf-8", newline=NL).write(s)
+    print("built", len(big), "project pages x", len(VARIANTS), "versions")
