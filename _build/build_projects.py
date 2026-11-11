@@ -68,9 +68,7 @@ PROJECTS = [
     "card": ("GPS check-in, personal shifts, reminders and overtime approval.", "تسجيل حضور بـ GPS، دوامات شخصية، تذكيرات وموافقة على الإضافي."),
     "card_result": ("Replaced a WhatsApp attendance group", "حلّ محل مجموعة واتساب للدوام"),
     "thumb": "attendance.webp",
-    "stats": [("50", ("employees covered", "موظفاً مشمولاً")),
-              (("Every half hour", "كل نصف ساعة"), ("a reminder until they check in or out", "تذكير حتى يسجّل الدخول أو الخروج")),
-              (("No more", "انتهى"), ("hours copied out of a chat", "نسخ الساعات من المحادثات"))],
+    "proof": ("50", ("employees covered", "موظفاً مشمولاً")),  # shown as one emphasized line, not a box
     "before": [("Employee posts the time in a WhatsApp group", "الموظف يكتب الوقت في مجموعة واتساب"),
                ("Someone reads through the chat", "أحدهم يقرأ المحادثة"),
                ("Hours typed up by hand", "الساعات تُفرَّغ يدوياً"),
@@ -100,9 +98,7 @@ PROJECTS = [
     "card": ("Generated from the order with the amount in Arabic words. No formatting or retyping by hand.", "تُنشأ من الطلب مع المبلغ بالحروف العربية، دون تنسيق أو إعادة كتابة يدوية."),
     "card_result": ("Minutes instead of an hour per document", "دقائق بدل ساعة لكل مستند"),
     "thumb": "voucher.webp",
-    "stats": [(("Minutes, not hours", "دقائق لا ساعات"), ("per invoice or voucher, generated from the order instead of formatted and retyped by hand", "لكل فاتورة أو سند، تُنشأ من الطلب بدلاً من تنسيقها وإعادة كتابتها يدوياً")),
-              ("120+", ("invoices a month", "فاتورة شهرياً")),
-              (("Print-ready", "جاهزة للطباعة"), ("on the A5 stationery already in use", "على قرطاسية A5 المستخدمة حالياً"))],
+    "proof": ("120+", ("invoices a month", "فاتورة شهرياً")),  # shown as one emphasized line, not a box
     "before": [("Open a Word or Excel template", "فتح قالب Word أو Excel"),
                ("Copy items and prices from the order", "نسخ البنود والأسعار من الطلب"),
                ("Write the amount in Arabic words by hand", "كتابة المبلغ بالحروف يدوياً"),
@@ -134,8 +130,6 @@ PROJECTS = [
     "card": ("Set a customer's discount once, applied to every order.", "اضبط خصم العميل مرة واحدة، فيُطبَّق على كل طلب."),
     "card_result": ("No more forgotten or wrong discounts", "لا خصومات منسية أو خاطئة بعد اليوم"),
     "thumb": "discount.webp",
-    "stats": [("1", ("place to set each discount", "مكان واحد لضبط كل خصم")),
-              ("100%", ("of order lines covered", "من بنود الطلب مشمولة"))],
     "before": [("Staff remember who gets a discount", "الموظفون يتذكرون من له خصم"),
                ("Discount typed on each order line", "الخصم يُكتب على كل بند"),
                ("Checked again at invoicing", "يُراجع مجدداً عند الفوترة")],
@@ -162,10 +156,7 @@ PROJECTS = [
     "card_result": ("No customer request lost since launch", "لم يضع أي طلب عميل منذ الإطلاق"),
     "thumb": "rentory-order.webp",
     "launched": ("Launched on 1 August 2026", "أُطلق في 1 أغسطس 2026"),
-    "stats": [(("None", "ولا طلب"), ("customer requests lost since launch", "ضاع من طلبات العملاء منذ الإطلاق")),
-              (("Rare", "نادرة"), ("order mistakes, down from several a week", "أخطاء الطلبات، بعد أن كانت متكررة أسبوعياً")),
-              (("Almost none", "شبه معدومة"), ("critical incidents in a typical week", "الحوادث الحرجة في الأسبوع المعتاد")),
-              ("800+", ("units tracked by serial", "قطعة مُتتبَّعة بالرقم التسلسلي"))],
+    "proof": ("800+", ("units tracked by serial", "قطعة مُتتبَّعة بالرقم التسلسلي")),  # shown as one emphasized line, not a box
     "before": [("Customer asks on WhatsApp or by phone", "العميل يسأل عبر واتساب أو الهاتف"),
                ("Order noted on paper or in a chat", "الطلب يُدوَّن على ورقة أو في محادثة"),
                ("Availability checked on the shelf", "التوفر يُفحص على الرف"),
@@ -205,8 +196,6 @@ PROJECTS = [
     "card": ("Revenue and most-rented reports, one click away.", "تقارير الإيرادات والأكثر تأجيراً بنقرة واحدة."),
     "card_result": ("Investor reports without spreadsheets", "تقارير المستثمرين دون جداول Excel"),
     "thumb": "revenue.webp",
-    "stats": [(("Chart · Pivot · List", "رسم · محوري · قائمة"), ("switch views in one click", "التبديل بين العروض بنقرة")),
-              (("Any angle", "من كل زاوية"), ("group by product, category, customer, month or year", "التجميع حسب المنتج أو الفئة أو العميل أو الشهر أو السنة"))],
     "before": [("Export orders to Excel", "تصدير الطلبات إلى Excel"),
                ("Add up revenue per item by hand", "جمع إيراد كل قطعة يدوياً"),
                ("Build charts for the investor report", "إعداد رسوم بيانية لتقرير المستثمرين")],
@@ -231,8 +220,6 @@ PROJECTS = [
                 "نقل قاعدة بيانات الشركة الحية ووحداتها المخصصة من Odoo 17 إلى Odoo 19 Enterprise على Odoo.sh."),
     "card": ("A live company database moved two versions forward.", "قاعدة بيانات شركة حية نُقلت إصدارين للأمام."),
     "thumb": None,
-    "stats": [("17 → 19", ("Odoo versions", "إصدارات Odoo")),
-              ("6", ("custom modules running on 19", "وحدات مخصصة تعمل على 19"))],
     "before": [("Company running on Odoo 17", "الشركة تعمل على Odoo 17"),
                ("Custom modules written for 17", "وحدات مخصصة مكتوبة للإصدار 17")],
     "pain": ("Staying on an old version means missing features and a harder upgrade later.", "البقاء على إصدار قديم يعني ميزات مفقودة وترقية أصعب لاحقاً."),
@@ -265,8 +252,7 @@ UI = {
   "closed_src": ("CLOSED-SOURCE", "مغلق المصدر"),
   "next": ("Next project", "المشروع التالي"),
   "need_h": ("Need something like this?", "تحتاج شيئاً مشابهاً؟"),
-  "need_p": ("Tell me what your team does by hand today. A 15 minute call is enough to see if I can automate it.",
-             "أخبرني ما الذي يفعله فريقك يدوياً اليوم. مكالمة 15 دقيقة كافية لنعرف إن كان بإمكاني أتمتته."),
+  "need_p": ("A 15 minute call to see what can be automated.", "مكالمة 15 دقيقة لنعرف ما يمكن أتمتته."),
   "need_btn": ("Book a free 15 min call", "احجز مكالمة مجانية 15 دقيقة"),
   "foot": ("© 2026 MHD Kosai Alhafez", "© 2026 محمد قصي الحافظ"),
 }
@@ -298,9 +284,15 @@ def build(proj, nxt, variant):
     for k, v in UI.items(): p.ar["u_" + k] = e(v[1])
     T = lambda k, **kw: p.t(UI[k], key="u_" + k, **kw)
     title_en, title_ar = proj["title"]
-    stats = "".join(
-        f'<div class="stat">{p.t(v, tag="b", cls="w") if isinstance(v, tuple) else f"<b>{e(v)}</b>"}{p.t(l)}</div>'
-        for v, l in proj["stats"])
+    proof = ""
+    if proj.get("proof"):  # e.g. "<b>800+</b> units tracked by serial"
+        value, label = proj["proof"]
+        proof = f'<p class="proof"><b>{e(value)}</b> {p.t(label)}</p>'
+    if proj.get("stats"):  # boxes, kept only for the app's four platforms
+        boxes = "".join(
+            f'<div class="stat">{p.t(v, tag="b", cls="w") if isinstance(v, tuple) else f"<b>{e(v)}</b>"}{p.t(l)}</div>'
+            for v, l in proj["stats"])
+        proof += f'<div class="stats n{len(proj["stats"])}">{boxes}</div>'
     feats = "".join(f'<li>{p.t(f)}</li>' for f in proj["features"])
     tech = "".join(f'<span class="chip">{e(x)}</span>' for x in proj["tech"])
     src = f'<a class="btn src" href="{proj["repo"]}" target="_blank" rel="noopener" data-i18n="u_src_btn">{e(UI["src_btn"][0])}</a>' if proj.get("repo") else ""
@@ -371,7 +363,7 @@ window.AR = {json.dumps(p.ar, ensure_ascii=False, indent=0)};
     {p.t(proj["title"], tag="h1", cls="page-h1")}
     {p.t(proj["summary"], tag="p", cls="lead")}
     {p.t(proj["launched"], tag="p", cls="launch") if proj.get("launched") else ""}
-    <div class="stats n{len(proj["stats"])}">{stats}</div>
+    {proof}
   </div>
 
   <section>
